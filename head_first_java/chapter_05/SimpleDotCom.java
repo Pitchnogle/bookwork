@@ -28,3 +28,6 @@ public class SimpleDotCom {
     return result;
   }
 }
+
+// This version has a bug -- if the user enters the same index which is a hit, it
+// can be entered multiple times.
