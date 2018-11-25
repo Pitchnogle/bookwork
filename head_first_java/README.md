@@ -6,4 +6,4 @@ This folder contains content related to the book [**Head First Java**](https://w
 
 ### Notes
 
-I've been using Windows 10 WSL with Ubuntu and VS Code as the editor. In general, this has been fine. However, the WSL currently has some issues with sound -- it doesn't seem to make any. Starting in Chapter 11 with the MIDI content, when the programs are launched, there will be a javax.sound.midi.MidiUnavailableException thrown. If launched from Windows *cmd* or *powershell* then the sound does work. *However, this also requires a separate OpenJDK.*
+I've been using Windows 10 WSL with Ubuntu and VS Code as the editor. In general, this has been fine. However, the WSL currently has some issues with sound -- it doesn't seem to make any! Starting in Chapter 11 with the MIDI content, when the programs are launched, there will be a javax.sound.midi.MidiUnavailableException thrown. If compiled using Windows version of OpenJDL and launched from Windows *cmd* or *powershell* then the sound does work. However, this also requires a separate OpenJDK.

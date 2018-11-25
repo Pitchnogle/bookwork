@@ -11,9 +11,9 @@ public class MiniMiniMusicApp {
       Sequencer player = MidiSystem.getSequencer();
       player.open();
 
-      Sequence seq = new Sequence(Sequence.PPQ, 4);
+      Sequence sequence = new Sequence(Sequence.PPQ, 4);
 
-      Track track = seq.createTrack();
+      Track track = sequence.createTrack();
 
       ShortMessage a = new ShortMessage();
       a.setMessage(144, 1, 44, 100);
@@ -25,8 +25,16 @@ public class MiniMiniMusicApp {
       MidiEvent noteOff = new MidiEvent(b, 16);
       track.add(noteOff);
 
-      player.setSequence(seq);
+      player.setSequence(sequence);
       player.start();
+      
+      // The book version would hang. This addition was made to have the app
+      // quit once the note has finished playing.
+      while (player.isRunning() == true) {
+        Thread.sleep(10);
+      }
+
+      player.close();
     }
     catch (Exception ex) {
       ex.printStackTrace();
