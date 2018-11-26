@@ -8,4 +8,4 @@ This folder contains content related to the book [**Head First Java, 2nd Edition
 
 I've been using Windows 10 WSL with Ubuntu and VS Code as the editor. In general, this has been fine. However, the WSL currently has some issues with sound -- it doesn't seem to make any! Starting in Chapter 11 with the MIDI content, when the programs are launched via WSL, a *javax.sound.midi.MidiUnavailableException* exception is thrown. However. if compiled using Windows version of OpenJDK and launched from Windows *cmd* or *powershell* then the sound does work.
 
-The text covers Java 5. So far there have been no issues getting the code to work using OpenJDK 11.
+The text covers Java 5. So far, there have been no issues getting the code to work using OpenJDK 11, outside of the sound in WSL.
