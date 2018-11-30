@@ -14,7 +14,7 @@ public <T extends Foo> void doSomething(ArrayList<T> list)
 public void doSomething(ArrayList<? extends Foo> list)
 ```
 
-The idea here is what's the point? Is there an advantage of one over another? Turns out that it depends on whether the **T** is used somewhere else.
+Is there an advantage of one over another? Turns out that it depends on whether the **T** is used somewhere else. The upper version might be more readable if **T** is used in several places.
 
 These two blocks of code are also equivalent:
 
