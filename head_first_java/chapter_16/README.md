@@ -22,6 +22,6 @@ These two blocks of code are also equivalent:
 public <T extends Foo> void doSomething(ArrayList<T> one, ArrayList<T> two)
 ```
 
-```Javas
+```Java
 public void doSomething(ArrayList<? extends Foo> one, ArrayList<? extends Foo> two)
 ```
