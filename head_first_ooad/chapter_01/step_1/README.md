@@ -9,3 +9,6 @@
   _This version adds in the enumerated types to replace some of the strings. This time, a guitar with Erin's criteria was found, but only a single guitar when multiple guitars matched._
 
   _To save some typing the enum classes were copied from the gitlab since the full enum was not provided in the book._
+
+- add page 21-23 code  
+  _This version adds in the modification to return a list of guitars which meets Erin's criteria. This is the final step for step 1._
