@@ -6,7 +6,7 @@ public class Guitar {
   public Guitar(String serialNumber, double price, GuitarSpec guitarSpec) {
     this.serialNumber = serialNumber;
     this.price = price;
-    this.guitarSpec;
+    this.guitarSpec = guitarSpec;
   }
 
   public String getSerialNumber() {
