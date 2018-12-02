@@ -1,6 +1,8 @@
 ### Notes
 
-### Separate the source code from the build process  
+**Separate the source code from the build process**
+
+The source code goes in the _src/_ folder and the compiles classes go in the _classes/_ folder.
 
 ```
 MyProject/
