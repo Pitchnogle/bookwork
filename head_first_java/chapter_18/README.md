@@ -5,11 +5,11 @@
 There are a number of steps necessary to make the remote service.
 
 1. Make a Remote Interface
-  1. Extend java.rmi.Remote  
+    1. Extend java.rmi.Remote  
     ```
     public interface MyRemote extends Remote {
     ```
-  2. Declare that all methods throw a remote exception  
+    2. Declare that all methods throw a remote exception  
     ```
     import java.rmi.*;
 
@@ -17,12 +17,12 @@ There are a number of steps necessary to make the remote service.
       public String sayHello() throws RemoteException;
     }
     ```
-  3. Be sure arguments and return values are primitives or Serializable  
+    3. Be sure arguments and return values are primitives or Serializable  
     ```
     public String sayHello() throws RemoteException;
     ```
 2. Make a Remote Implementation
-  1. Implement a remote interface  
+    1. Implement a remote interface  
     ```
     public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
       public String sayHello() {
@@ -30,15 +30,15 @@ There are a number of steps necessary to make the remote service.
       }
     }
     ```
-  2. Extend UnicastRemoteObject  
+    2. Extend UnicastRemoteObject  
     ```
     public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
     ```
-  3. Write a no-arg constructor that declares a RemoteException  
+    3. Write a no-arg constructor that declares a RemoteException  
     ```
     public MyRemoteImpl() throws RemoteException {}
     ```
-  4. Register the service with the RMI registry  
+    4. Register the service with the RMI registry  
     ```
     try {
       MyRemote service = new MyRemoteImpl();
@@ -47,15 +47,15 @@ There are a number of steps necessary to make the remote service.
     catch (Exception e) { ... }
     ```
 3. Generate the stubs and skeletons
-   ```
-   % rmic MyRemoteImpl
-   ```
+    ```
+    % rmic MyRemoteImpl
+    ```
 4. Run rmiregistry
-   ```
-   % rmiregistry
-   ```
+    ```
+    % rmiregistry
+    ```
 5. Start the service
-   Bring up the service on a separate terminal  
-   ```
-   % java MyRemoteImpl
-   ```
+    Bring up the service on a separate terminal  
+    ```
+    % java MyRemoteImpl
+    ```
