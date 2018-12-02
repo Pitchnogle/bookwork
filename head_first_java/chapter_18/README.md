@@ -6,11 +6,11 @@ There are a number of steps necessary to make the remote service.
 
 1. Make a Remote Interface
     1. Extend java.rmi.Remote  
-    ```
+    ```java
     public interface MyRemote extends Remote {
     ```
     2. Declare that all methods throw a remote exception  
-    ```
+    ```java
     import java.rmi.*;
 
     public interface MyRemote extends Remote {
@@ -18,12 +18,12 @@ There are a number of steps necessary to make the remote service.
     }
     ```
     3. Be sure arguments and return values are primitives or Serializable  
-    ```
+    ```java
     public String sayHello() throws RemoteException;
     ```
 2. Make a Remote Implementation
     1. Implement a remote interface  
-    ```
+    ```java
     public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
       public String sayHello() {
         return "server says, 'Hey'";
@@ -31,15 +31,15 @@ There are a number of steps necessary to make the remote service.
     }
     ```
     2. Extend UnicastRemoteObject  
-    ```
+    ```java
     public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
     ```
     3. Write a no-arg constructor that declares a RemoteException  
-    ```
+    ```java
     public MyRemoteImpl() throws RemoteException {}
     ```
     4. Register the service with the RMI registry  
-    ```
+    ```java
     try {
       MyRemote service = new MyRemoteImpl();
       Naming.rebind("Remote Hello", service);
