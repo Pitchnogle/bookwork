@@ -1,29 +1,27 @@
 import java.awt.*;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 
-public class AnimationTest1 {
+public class AnimationTest2 {
   public static void main(String[] args) {
-    DisplayMode displayMode;
-
-    if (args.length == 3) {
-      displayMode = new DisplayMode(
-        Integer.parseInt(args[0]),
-        Integer.parseInt(args[1]),
-        Integer.parseInt(args[2]),
-        DisplayMode.REFRESH_RATE_UNKNOWN);
-    }
-    else {
-      displayMode = new DisplayMode(1920, 1080, 32, DisplayMode.REFRESH_RATE_UNKNOWN);
-    }
-
-    AnimationTest1 test = new AnimationTest1();
-    test.run(displayMode);
+    AnimationTest2 test = new AnimationTest2();
+    test.run();
   }
+
+  private static final DisplayMode POSSIBLE_MODES[] = {
+    new DisplayMode(1920, 1080, 32, 0),
+    new DisplayMode(1920, 1080, 24, 0),
+    new DisplayMode(1920, 1080, 16, 0),
+    new DisplayMode(800, 600, 32, 0),
+    new DisplayMode(800, 600, 24, 0),
+    new DisplayMode(800, 600, 16, 0),
+    new DisplayMode(640, 480, 32, 0),
+    new DisplayMode(640, 480, 24, 0),
+    new DisplayMode(640, 480, 16, 0)
+  };
 
   private static final long DEMO_TIME = 10000;
 
-  private SimpleScreenManager screen;
+  private ScreenManager screen;
   private Image bgImage;
   private Animation animation;
 
@@ -48,10 +46,11 @@ public class AnimationTest1 {
     return new ImageIcon(filename).getImage();
   }
 
-  public void run(DisplayMode displayMode) {
-    screen = new SimpleScreenManager();
+  public void run() {
+    screen = new ScreenManager();
     try {
-      screen.setFullScreen(displayMode, new JFrame());
+      DisplayMode displayMode = screen.findFirstCompatibleMode(POSSIBLE_MODES);
+      screen.setFullScreen(displayMode);
       loadImages();
       animationLoop();
     }
@@ -72,9 +71,10 @@ public class AnimationTest1 {
       animation.update(elapsedTime);
 
       // Draw to the screen
-      Graphics g = screen.getFullScreenWindow().getGraphics();
+      Graphics g = screen.getGraphics();
       draw(g);
       g.dispose();
+      screen.update();
 
       // Take a nap
       try {
