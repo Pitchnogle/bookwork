@@ -1,12 +1,15 @@
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.LinkedList;
 
 public class DogDoor {
   private boolean open;
-  private Bark allowedBark;
+  private LinkedList<Bark> allowedBarks;
 
   public DogDoor() {
     this.open = open;
+
+    allowedBarks = new LinkedList<Bark>();
   }
 
   public void open() {
@@ -31,11 +34,11 @@ public class DogDoor {
     return open;
   }
 
-  public setAllowedBark(Bark bark) {
-    allowedBark = bark;
+  public void addAllowedBark(Bark bark) {
+    allowedBarks.add(bark);
   }
 
-  public Bark getAllowedBark() {
-    return allowedBark;
+  public LinkedList<Bark> getAllowedBarks() {
+    return allowedBarks;
   }
 }
