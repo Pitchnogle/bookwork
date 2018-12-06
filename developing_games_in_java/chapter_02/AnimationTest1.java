@@ -29,7 +29,7 @@ public class AnimationTest1 {
 
   public void loadImages() {
     // Load images
-    bgImage = loadImage("images/background.jpg");
+    bgImage = loadImage("images/background.png");
     Image player1 = loadImage("images/player1.png");
     Image player2 = loadImage("images/player2.png");
     Image player3 = loadImage("images/player3.png");
