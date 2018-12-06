@@ -1,6 +1,6 @@
 ## Notes
 
-This book is quite old by now. At the time of release the current version of Java was 1.4. Java has changed quite a bit since then...
+This book is quite old by now; at the time of the book's release the current version of Java was 1.4.
 
 *Currently using OpenJDK 11*
 
