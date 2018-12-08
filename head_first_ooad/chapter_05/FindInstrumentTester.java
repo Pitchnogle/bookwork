@@ -17,8 +17,7 @@ public class FindInstrumentTester {
     LinkedList<Instrument> matchingInstruments = inventory.search(whatBryanLikes);
     if (!matchingInstruments.isEmpty()) {
       System.out.println("Bryan, you might like these instruments:");
-      for (Iterator i = matchingInstruments.iterator(); i.hasNext(); ) {
-        Instrument instrument = (Instrument)i.next();
+      for (Instrument instrument : matchingInstruments) {
         InstrumentSpec spec = instrument.getSpec();
         System.out.println("We have a " + spec.getProperty("instrumentType") +
           " with the following properties:");
