@@ -2,10 +2,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Tile {
-  private List<Unit> units;
+  private List units;
 
   public Tile() {
-    units = new LinkedList<Unit>();
+    units = new LinkedList();
   }
 
   protected void addUnit(Unit unit) {
@@ -14,5 +14,13 @@ public class Tile {
 
   protected void removeUnit(Unit unit) {
     units.remove(unit);
+  }
+
+  protected List getUnits() {
+    return units;
+  }
+
+  protected void removeUnits() {
+
   }
 }
