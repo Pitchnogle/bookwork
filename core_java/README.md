@@ -14,10 +14,10 @@ _Most of my other Java books are grossly out of date. This one is current as of 
   This is first and foremost; doing anything else violates encapsulation. You may need to  write an accessor or mutator method occasionally, but you are still better off keeping the instance fields private. Bitter experience shows that the data representation may change, but how the data is used will change much less frequently.
 
 2. _Always initialize data_  
-  Java won't initialize local variables for you, but it will initialize instance fields or objects. Don't relay on the defaults, but initialize all variables explicitly, either by supplying a default or by setting defaults in all constructors.
+  Java won't initialize local variables for you, but it will initialize instance fields or objects. Don't rely on the defaults, but initialize all variables explicitly, either by supplying a default or by setting defaults in all constructors.
 
 3. _Don't use too many basic types in a class_  
-  The idea is to replace mutiple _related_ uses of basic types with other classes. This keeps your classes easier to understand and to change. For example, replace the following instance fields in a _Customer_ class:  
+  The idea is to replace multiple _related_ uses of basic types with other classes. This keeps your classes easier to understand and change. For example, replace the following instance fields in a _Customer_ class:  
     ```Java
     private String street;
     private String city;
