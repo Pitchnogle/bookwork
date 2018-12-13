@@ -8,7 +8,7 @@ _Most of my other Java books are grossly out of date. This one is current as of 
 
 ### jshell
 
-Java 9 added a new interactive interpreter called _jshell_. This works similarly to other interactive interpreters such as _python_.
+Java 9 added a new interactive interpreter called _jshell_. This works similar to other interactive interpreters such as _python_.
 
 ```
 $ jshell
