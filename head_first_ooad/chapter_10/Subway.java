@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Subway {
@@ -32,5 +33,19 @@ public class Subway {
     else {
       throw new RuntimeException("Invalid connection");
     }
+  }
+
+  public boolean hasConnection(String stationName1, String stationName2, String lineName) {
+    Station station1 = new Station(stationName1);
+    Station station2 = new Station(stationName2);
+    for (Iterator i = connections.iterator(); i.hasNext(); ) {
+      Connection connection = (Connection)i.next();
+      if (connection.getLineName().equalsIgnoreCase(lineName)) {
+        if (connection.getStation1().equals(station1) && connection.getStation2().equals(station2)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }
