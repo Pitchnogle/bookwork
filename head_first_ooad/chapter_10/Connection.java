@@ -20,4 +20,8 @@ public class Connection {
   public String getLineName() {
     return lineName;
   }
+
+  public String toString() {
+    return "[" + station1.getName() + ", " + station2.getName() + ", " + lineName + "]";
+  }
 }

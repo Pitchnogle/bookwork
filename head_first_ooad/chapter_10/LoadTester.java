@@ -4,7 +4,7 @@ public class LoadTester {
   public static void main(String[] args) {
     try {
       SubwayLoader loader = new SubwayLoader();
-      Subway objectville = loader.loadFromFile(new File("ObjectVilleSubway.txt"));
+      Subway objectville = loader.loadFromFile(new File("ObjectvilleSubway.txt"));
       System.out.println("Testing stations...");
       if (objectville.hasStation("DRY Drive")
        && objectville.hasStation("Weather-O-Rama, Inc.")
