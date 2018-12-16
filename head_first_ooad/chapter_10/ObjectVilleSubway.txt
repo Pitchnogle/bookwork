@@ -18,26 +18,72 @@ DRY Drive
 PMP Place
 Boards 'R' Us
 Weather-O-Rama, Inc.
+Head First Lounge
+Servet Springs
+JavaRanch
+JSP Junction
+GoF Gardens
+SRP Square
+OCP Orchard
+EJB Estates
+Design Patterns Plaza
+ObjectVille Diner
+Break Neck Pizza
+
+Booch Line
+Ajax Rapids
+ObjectVille PizzaStore
+Head First Labs
+LSP Lane
+JavaBeans Boulevard
+HTML Heights
+
+Gamma Line
+OOA&D Oval
+Head First Lounge
+OOA&D Oval
+
+Jacobson Line
+Servet Springs
+JavaRanch
+JSP Junction
+GoF Gardens
+
+Liskov Line
+JSP Junction
+SRP Square
+OCP Orchard
+EJB Estates
+Design Patterns Plaza
 
 Meyer Line
-OOA&D Oval
-SimUDuck Lake
-CSS Center
-Web Design Way
 DRY Drive
 Head First Theater
-
-Wirfs-Brock Line
-HTML Heights
-UML Walk
-LSP Lane
-Algebra Avenue
-PMP Place
-Weather-O-Rama, Inc.
-XHTML Expressway
+CSS Center
+OOA&D Oval
+SimUDuck Lake
+Web Design Way
 
 Rumbaugh Line
 Choo-O-Holic, Inc.
 XHTML Expressway
-Head First Theater
 Infinite Circle
+Head First Theater
+
+Wirfs-Brock Line
+XHTML Expressway
+Weather-O-Rama, Inc.
+HTML Heights
+UML Walk
+Head First Lounge
+ObjectVille Diner
+Servet Springs
+SRP Square
+Break Neck Pizza
+EJB Estates
+Boards 'R' Us
+PMP Place
+DRY Drive
+Algebra Avenue
+LSP Lane
+
