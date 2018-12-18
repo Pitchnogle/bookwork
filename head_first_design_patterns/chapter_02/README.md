@@ -8,3 +8,7 @@
 The **Observer** pattern defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.
 
 ![Observer Pattern](../images/observer.png)
+
+### Design Priciples
+- Strive for loosely coupled designs between objects that interact
+  
