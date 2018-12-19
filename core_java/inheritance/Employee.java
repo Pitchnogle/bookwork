@@ -46,4 +46,12 @@ public class Employee {
     // Test whether the fields have identical values
     return name.equals(other.name) && salary == other.salary && hireDay.equals(other.hireDay);
   }
+
+  public String toString() {
+    return getClass().getName() 
+      + "[name=" + name
+      + ",salary=" + salary
+      + ",hireDay=" + hireDay
+      + "]";
+  }
 }

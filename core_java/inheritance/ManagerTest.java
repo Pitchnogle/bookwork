@@ -12,7 +12,13 @@ public class ManagerTest {
     staff[2] = new Employee("Tommy Tester", 40000, 1990, 3, 15);
 
     for (Employee employee : staff) {
-      System.out.println("name=" + employee.getName() + ", salary=" + employee.getSalary());
+      // Book example
+      //System.out.println("name=" + employee.getName() + ", salary=" + employee.getSalary());
+
+      // Use toString()
+      System.out.println(employee);
     }
+
+
   }
 }
