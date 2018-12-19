@@ -1,0 +1,9 @@
+## Notes
+
+```
+$ javac inheritance/ManagerTest.java
+$ java inheritance.ManagerTest
+name=Carl Cracker, salary=85000.0
+name=Harry Hacker, salary=50000.0
+name=Tommy Tester, salary=40000.0
+```
