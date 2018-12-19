@@ -107,3 +107,32 @@ jshell> /exit
     
     Of course, not _all_ classes should be immutable.
 
+### Recipe for the *perfect* ```equals``` method
+
+1. Name the explicit parameter ```otherObject``` - later, you will need to cast it to another variable that you should call ```other```.
+2. Test whether this happens to be indentical to ```otherObject```:  
+    ```Java
+    if (this == otherObject) return true;
+    ```
+    This statement is just an optimization. In practice, this is a common case. It is much cheaper to check for identity than to compare the fields.
+3. Test whether ```otherObject``` is ```null``` and return ```false``` if it is. This test is required.  
+    ```Java
+    if (otherObject == null) return false;
+    ```
+4. Compare the classes of ```this``` and ```otherObject```. If the semantics of ```equals``` can change in subclasses, use the ```getClass``` test:  
+    ```Java
+    if (getClass() != otherObject.getClass()) return false;
+    ```
+    If the same semantics holds for *all* subclasses, you can use an ```instanceof``` test:  
+    ```
+    if (!(otherObject instanceof ClassName)) return false;
+    ```
+5. Cast ```otherObject``` to a variable of your class type:  
+    ```Java
+    ClassName other = (ClassName) otherObject;
+    ```
+6. Now compare the fields, as required by your notion of equality. Use ```==``` for primitive types fields, ```Objects.equals``` for object fields. Return ```true``` if all fields match, ```false``` otherwise.
+    ```Java
+    return field1 == other.field1 && Objects.equals(field2, other.field2) && ...;
+    ```
+    If you redefine ```equals``` in a subclass, include a call to ```super.equals(other)```.
