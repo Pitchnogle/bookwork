@@ -39,7 +39,7 @@ do this instead:
 const char *s = "some string";
 ```
 That way, if you do something in the code, such as:  
-```
+```C
 s[0] = 'S';
 ```
 then the compiler will produce an error.

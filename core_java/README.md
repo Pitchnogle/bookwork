@@ -39,7 +39,7 @@ jshell> /exit
 |  Goodbye
 ```
 
-- To exit jshell, type ```/ex``` or ```/exit```.
+- To exit jshell, type `/ex` or `/exit`.
 
 ### Class Design Hints
 
@@ -124,7 +124,7 @@ jshell> /exit
     if (getClass() != otherObject.getClass()) return false;
     ```
     If the same semantics holds for *all* subclasses, you can use an `instanceof` test:  
-    ```
+    ```Java
     if (!(otherObject instanceof ClassName)) return false;
     ```
 5. Cast `otherObject` to a variable of your class type:  
