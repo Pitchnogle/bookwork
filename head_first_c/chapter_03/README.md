@@ -43,3 +43,43 @@ data=[
 ]
 ```
 
+The next section demonstrates multiple open files.
+
+```
+$ cat spooky.csv
+30.685163,-68.137207,Type=Yeti
+28.304380,-74.575195,Type=UFO
+29.132971,-71.136475,Type=Ship
+28.343065,-92.753906,Type=Elvis
+27.868217,-68.005371,Type=Goatsucker
+30.496017,-73.333740,Type=Disappearance
+26.224447,-71.477051,Type=UFO
+29.401320,-66.027832,Type=Ship
+37.879536,-69.477539,Type=Elvis
+22.705256,-68.192139,Type=Elvis
+27.166695,-87.484131,Type=Elvis
+```
+
+```
+$ gcc categorize.c -o categorize
+```
+
+Skipping directly to the one which uses command-line arguments.
+
+```
+$ ./categorize UFO ufos.csv Elvis elvis.csv others.csv
+$ cat ufos.csv
+28.304380,-74.575195,Type=UFO
+26.224447,-71.477051,Type=UFO
+$ cat elvis.csv
+28.343065,-92.753906,Type=Elvis
+37.879536,-69.477539,Type=Elvis
+22.705256,-68.192139,Type=Elvis
+27.166695,-87.484131,Type=Elvis
+$ cat others.csv
+30.685163,-68.137207,Type=Yeti
+29.132971,-71.136475,Type=Ship
+27.868217,-68.005371,Type=Goatsucker
+30.496017,-73.333740,Type=Disappearance
+29.401320,-66.027832,Type=Ship
+```
