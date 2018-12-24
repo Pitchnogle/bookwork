@@ -83,3 +83,25 @@ $ cat others.csv
 30.496017,-73.333740,Type=Disappearance
 29.401320,-66.027832,Type=Ship
 ```
+
+### Pizza Pieces Solution
+
+```
+$ ./order_pizza Anchovies
+Ingredients:
+Anchovies
+$ ./order_pizza -d now Anchovies Pineapple
+To be delivered now.
+Ingredients:
+Anchovies
+Pineapple
+$ ./order_pizza -d now -t Anchovies Pineapple
+Thick crust.
+To be delivered now.
+Ingredients:s
+Anchovies
+Pineapple
+$ ./order_pizza -d
+./order_pizza: option requires an argument -- 'd'
+Unknown option: '(null)'
+```
