@@ -18,9 +18,28 @@ data=[
 {latitude: 42.362602, longitude: -71.088814, info: "Speed = 19"},
 {latitude: 42.362530, longitude: -71.087936, info: "Speed = 16"},
 {latitude: 42.362457, longitude: -71.087059, info: "Speed = 16"},
-{latitude: 42.362385, longitude: -71.086182, info: "Speed = 21"}
+{latitude: 42.362385, longitude: -71.086182, info: "Speed = 21"},
+{latitude: 29.401320, longitude: -66.027832, info: "Speed = 20"},
+{latitude: 29.132971, longitude: -71.136475, info: "Speed = 22"}
 ]
 ```
 
 _The book version of the code wasn't working correctly on WSL. The CSV file was created in windows in VS Code, so it added the `CR LF` to the end of the lines. I modified the regex to account for this, which was necessary even though I am using Linux since that's what the file is using._
+
+```
+$ gcc -Wall bermuda.c -o bermuda
+$ ./bermuda < gpsdata.csv
+29.401320,-66.027832,Speed = 20
+29.132971,-71.136475,Speed = 22
+```
+
+Then, pipe the output of `bermuda` into `geo2json`. The _parentheses_ are necessary in the example below.
+
+```
+$ (./bermuda | ./geo2json) < gpsdata.csv
+data=[
+{latitude: 29.401320, longitude: -66.027832, info: "Speed = 20"},
+{latitude: 29.132971, longitude: -71.136475, info: "Speed = 22"}
+]
+```
 
