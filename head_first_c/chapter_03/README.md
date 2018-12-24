@@ -22,5 +22,5 @@ data=[
 ]
 ```
 
-_The book version of the code wasn't working correctly on WSL. The CSV file was created in windows in VS Code, so it add the `CR LF` to the end of the lines. I modified the regex to account for this._
+_The book version of the code wasn't working correctly on WSL. The CSV file was created in windows in VS Code, so it added the `CR LF` to the end of the lines. I modified the regex to account for this, which was necessary even though I am using Linux since that's what the file is using._
 
