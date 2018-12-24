@@ -1,3 +1,3 @@
 # Head First C
 
-This folder contains content related to the book [**Head First C**](https://www.oreilly.com/library/view/head-first-c/9781449335649/) from O'Reilly.
+This folder contains content related to the book [**Head First C**](http://shop.oreilly.com/product/0636920015482.do) from O'Reilly.
