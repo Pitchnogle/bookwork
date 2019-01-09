@@ -3,6 +3,8 @@
 This repository is a code archive for various computer programming books
 
 ## Content
+- [C# 3.0 Design Patterns](c#_design_patterns)
+- [The C# Player's Guide](c#_players_guide)
 - [Core Java](core_java)
 - [Developing Games in Java](developing_games_in_java)
 - [Head First C](head_first_c)
@@ -12,4 +14,6 @@ This repository is a code archive for various computer programming books
 - [Head First Python](head_first_python)
 - [Learn C the Hard Way](learn_c_hard_way)
 - [Learn Python3 the Hard Way](learn_python3_hard_way)
+- [Learning C# by Developing Games with Unity 5.x](learning_c#_by_games_unity)
+- [Unity Game Development in 24 Hours](unity_game_dev_24hours)
   
