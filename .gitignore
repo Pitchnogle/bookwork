@@ -1,2 +1,5 @@
 # Ignore folder named ".vscode"
 .vscode/
+/csharp_players_guide/part_1/hello/hello/obj/Debug
+/csharp_players_guide/part_1/hello/hello/bin/Debug
+/csharp_players_guide/part_1/hello/.vs/hello/v15
