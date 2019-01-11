@@ -136,3 +136,28 @@ jshell> /exit
     return field1 == other.field1 && Objects.equals(field2, other.field2) && ...;
     ```
     If you redefine `equals` in a subclass, include a call to `super.equals(other)`.
+
+### Design Hints for Inheritance
+
+1. _Place common operations and fields in the superclass._
+2. _Don't use protected fields._
+3. _Use inheritance to model the "is-a" relationship._
+4. _Don't use inheritance unless all inherited methods make sense._
+5. _Don't change the expected behavior when you override a method._
+6. _Use polymorphism, not type information._
+    Whenever you find code in the form
+    ```
+    if (x is of type1)
+      action1(x);
+    else if (x is of type2)
+      action2(x);
+    ```
+    think polymorphism.
+
+    Do action1(x) and action2(x) represent a common concept? If so, make the concept a method of a common superclass or interface of both types. Then you can simply call
+       ```Java
+       x.action();
+       ```
+    and have the dynamic dispatch mechanism inherit a polymophism launch the correct action.
+7. _Don't overuse reflection._
+
