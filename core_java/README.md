@@ -154,10 +154,10 @@ jshell> /exit
     ```
     think polymorphism.
 
-    Do action1(x) and action2(x) represent a common concept? If so, make the concept a method of a common superclass or interface of both types. Then you can simply call
-       ```Java
-       x.action();
-       ```
+    Do action1(x) and action2(x) represent a common concept? If so, make the concept a method of a common superclass or interface of both types. Then you can simply call  
+    ```Java
+    x.action();
+    ```
     and have the dynamic dispatch mechanism inherit a polymophism launch the correct action.
 7. _Don't overuse reflection._
 
