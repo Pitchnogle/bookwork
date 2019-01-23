@@ -1,12 +1,17 @@
 class Walker {
   float x;
   float y;
+  float tx;
+  float ty;
   
   final int pen_size = 4;
   
   Walker() {
     x = width / 2;
     y = height / 2;
+    
+    tx = 0;
+    ty = 10000;
   }
   
   void display() {
@@ -16,10 +21,10 @@ class Walker {
   }
   
   void step() {
-    float xstep = random(-pen_size, pen_size);
-    float ystep = random(-pen_size, pen_size);
+    x = map(noise(tx), 0, 1, 0, width);
+    y = map(noise(ty), 0, 1, 0, height);
     
-    x += xstep;
-    y += ystep;
+    tx += 0.01;
+    ty += 0.01;
   }
 }

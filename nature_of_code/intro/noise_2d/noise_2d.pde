@@ -5,7 +5,7 @@ float xoff = 0.0;
 void setup() {
   fullScreen();
   
-  noiseDetail(3, 0.8);
+  //noiseDetail(3, 0.8);
 }
 
 void draw() {

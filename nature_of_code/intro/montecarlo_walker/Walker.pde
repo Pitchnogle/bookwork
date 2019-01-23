@@ -16,10 +16,22 @@ class Walker {
   }
   
   void step() {
-    float xstep = random(-pen_size, pen_size);
-    float ystep = random(-pen_size, pen_size);
+    // Use montecarlo probability to determine step
+    float xstep = montecarlo() * 10;
+    float ystep = montecarlo() * 10;
     
-    x += xstep;
-    y += ystep;
+    x += random(-xstep, xstep);
+    y += random(-ystep, ystep);
+  }
+  
+  float montecarlo() {
+    while (true) {
+      float r1 = random(1);
+      float prob = r1; // adjust this
+      float r2 = random(1);
+      if (r2 < prob) {
+        return r1; 
+      }
+    }
   }
 }
