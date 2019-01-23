@@ -15,5 +15,7 @@ This repository is a code archive for various computer programming books
 - [Learn C the Hard Way](learn_c_hard_way)
 - [Learn Python3 the Hard Way](learn_python3_hard_way)
 - [Learning C# by Developing Games with Unity 5.x](learning_csharp_by_games_unity)
+- [Learning Processing](learning_processing)
+- [The Nature of Code](nature_of_code)
 - [Unity Game Development in 24 Hours](unity_game_development_24hours)
   
