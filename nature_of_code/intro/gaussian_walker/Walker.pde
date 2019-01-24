@@ -4,9 +4,12 @@ class Walker {
   float x;
   float y;
   
+  float hue = 0;
+  
   Random generator;
 
-  final int pen_size = 4;
+  final int pen_size = 8;
+  final int step_size = 4;
   
   Walker() {
     x = width / 2;
@@ -16,7 +19,7 @@ class Walker {
   }
   
   void display() {
-    stroke(0);
+    stroke((int)hue, 255, 255);
     strokeWeight(pen_size);
     point(x, y);
   }
@@ -26,9 +29,18 @@ class Walker {
     float ry = (float)generator.nextGaussian();
     
     // The standard deviation is our pen size
-    float sd = pen_size;
+    float sd = step_size;
     
     x += sd * rx; // using zero mean
     y += sd * ry; // using zero mean
+    
+    // The walker can't leave the screen
+    constrain(x, 0, width);
+    constrain(y, 0, height);
+    
+    hue += 0.25;
+    if (hue >= 255) {
+      hue = 0;  
+    }
   }
 }

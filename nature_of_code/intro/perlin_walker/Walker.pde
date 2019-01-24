@@ -4,7 +4,9 @@ class Walker {
   float tx;
   float ty;
   
-  final int pen_size = 4;
+  float hue = 0;
+  
+  final int pen_size = 8;
   
   Walker() {
     x = width / 2;
@@ -15,7 +17,7 @@ class Walker {
   }
   
   void display() {
-    stroke(0);
+    stroke((int)hue, 255, 255);
     strokeWeight(pen_size);
     point(x, y);
   }
@@ -26,5 +28,10 @@ class Walker {
     
     tx += 0.01;
     ty += 0.01;
+    
+    hue += 0.25;
+    if (hue >= 255) {
+      hue = 0;  
+    }
   }
 }

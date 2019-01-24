@@ -2,7 +2,9 @@ class Walker {
   float x;
   float y;
   
-  final int pen_size = 4;
+  float hue = 0;
+  
+  final int pen_size = 8;
   
   Walker() {
     x = width / 2;
@@ -10,7 +12,7 @@ class Walker {
   }
   
   void display() {
-    stroke(0);
+    stroke((int)hue, 255, 255);
     strokeWeight(pen_size);
     point(x, y);
   }
@@ -21,5 +23,14 @@ class Walker {
     
     x += xstep;
     y += ystep;
+    
+    // The walker can't leave the screen
+    constrain(x, 0, width);
+    constrain(y, 0, height);
+    
+    hue += 0.25;
+    if (hue >= 255) {
+      hue = 0;  
+    }
   }
 }

@@ -2,7 +2,8 @@ Walker w;
 
 void setup() {
   fullScreen();
-  background(255);
+  background(0);
+  colorMode(HSB);
   
   w = new Walker();
 }
