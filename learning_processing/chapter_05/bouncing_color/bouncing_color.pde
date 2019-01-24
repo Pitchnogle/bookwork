@@ -1,18 +1,33 @@
+float c1 = 0;
+float c2 = 255;
+
+float dc1 = 1;
+float dc2 = -1;
+
 void setup() {
-  fullScreen();
-  colorMode(HSB);
-  background(0);
+  fullScreen(); 
 }
 
 void draw() {
-  // Hue in cyan - violet range
-  int hue = (int)random(125, 190);  
-  int diameter = (int)random(10);
-  int x = (int)random(width);
-  int y = (int)random(height);
-  
-  // Draw a random star per draw
   noStroke();
-  fill(hue, 255 - hue, 255);
-  ellipse(x, y, diameter, diameter);
+  
+  // Draw left rectangle
+  fill(c1, 0, c2);
+  rect(0, 0, width / 2, height);
+  
+  // Draw right rectangle
+  fill(c2, 0, c1);
+  rect(width / 2, 0, width / 2, height);
+  
+  // Adjust the color values
+  c1 += dc1;
+  c2 += dc2;
+  
+  if (c1 < 0 || c1 > 255) {
+    dc1 *= -1; 
+  }
+  
+  if (c2 < 0 || c2 > 255) {
+    dc2 *= -1; 
+  }
 }
