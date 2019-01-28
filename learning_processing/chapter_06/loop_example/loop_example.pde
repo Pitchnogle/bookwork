@@ -3,6 +3,7 @@ int step;
 
 void setup() {
   fullScreen();
+  //size(800, 450);
   colorMode(HSB);
   
   diameter = (int)(height * 0.80);

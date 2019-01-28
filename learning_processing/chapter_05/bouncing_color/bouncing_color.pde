@@ -6,6 +6,7 @@ float dc2 = -1;
 
 void setup() {
   fullScreen(); 
+  //size(800, 450);
 }
 
 void draw() {

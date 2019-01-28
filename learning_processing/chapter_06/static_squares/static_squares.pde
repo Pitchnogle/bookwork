@@ -2,6 +2,7 @@ final int step = 5;
 
 void setup() {
   fullScreen();
+  //size(800, 450);
   noStroke();
 }
 

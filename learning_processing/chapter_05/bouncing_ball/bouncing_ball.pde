@@ -9,6 +9,7 @@ float ay = 0.2;
 
 void setup() {
   fullScreen();
+  //size(800, 450);
 }
 
 void draw() {

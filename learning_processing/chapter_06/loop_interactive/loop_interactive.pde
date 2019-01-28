@@ -1,5 +1,6 @@
 void setup() {
   fullScreen();
+  //size(800, 450);
   colorMode(HSB);
   noStroke();
 }

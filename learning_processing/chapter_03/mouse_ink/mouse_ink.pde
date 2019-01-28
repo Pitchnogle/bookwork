@@ -2,6 +2,7 @@ int ink = 0; // black
 
 void setup() {
   fullScreen();
+  //size(800, 450);
   background(255); // white
 }
 
