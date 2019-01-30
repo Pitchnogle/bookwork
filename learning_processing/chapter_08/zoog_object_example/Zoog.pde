@@ -30,7 +30,7 @@ class Zoog {
     rectMode(CENTER);
     
     // Draw this Zoog's arms
-    for (float i = y - h / 3; i < y - h / 2; i += 10) {
+    for (float i = y - h / 3; i < y + h / 2; i += 10) {
       stroke(0);
       line(x - w / 4, i, x + w / 4, i);
     }
