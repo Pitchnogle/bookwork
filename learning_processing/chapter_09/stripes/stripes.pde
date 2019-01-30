@@ -10,7 +10,7 @@ void setup() {
 }
 
 void draw() {
-  background(100);
+  background(10);
   
   // Move and display all stripes
   for (int i = 0; i < stripes.length; i++) {
