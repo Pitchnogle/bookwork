@@ -5,8 +5,8 @@ class Drop {
   color c;
   float r;
   
-  Drop() {
-    r = 8;
+  Drop(int r) {
+    this.r = r;
     x = random(width);
     y = -4 * r;
     vy = random(1, 5);

@@ -22,18 +22,21 @@ void draw() {
   catcher.display();
   
   if (timer.is_finished()) {
-    drops[total_drops] = new Drop();
+    drops[total_drops] = new Drop(random(4, 10));
     total_drops++;
     
     if (total_drops >= drops.length) {
       total_drops = 0; 
     }
     
-    for (int i = 0; i < total_drops; i++) {
-      drops[i].move();
-      drops[i].display();
-    }
-    
     timer.start();
+  }
+  
+  for (int i = 0; i < total_drops; i++) {
+    drops[i].move();
+    drops[i].display();
+    if (catcher.intersect(drops[i])) {
+      drops[i].caught(); 
+    }
   }
 }
