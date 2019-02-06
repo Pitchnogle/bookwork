@@ -1,16 +1,18 @@
 Catcher catcher;
+Timer timer;
+Drop[] drops;
 
-Ball ball1;
-Ball ball2;
+int total_drops = 0;
 
 void setup() {
   //fullScreen();
   size(800, 450);
   
   catcher = new Catcher(32);
+  drops = new Drop[1000];
   
-  ball1 = new Ball(64);
-  ball2 = new Ball(32);
+  timer = new Timer(300);
+  timer.start();
 }
 
 void draw() {
@@ -19,14 +21,19 @@ void draw() {
   catcher.setLocation(mouseX, mouseY);
   catcher.display();
   
-  ball1.move();
-  ball2.move();
-  
-  if (ball1.intersect(ball2)) {
-    ball1.highlight();
-    ball2.highlight();
+  if (timer.is_finished()) {
+    drops[total_drops] = new Drop();
+    total_drops++;
+    
+    if (total_drops >= drops.length) {
+      total_drops = 0; 
+    }
+    
+    for (int i = 0; i < total_drops; i++) {
+      drops[i].move();
+      drops[i].display();
+    }
+    
+    timer.start();
   }
-  
-  ball1.display();
-  ball2.display();
 }
