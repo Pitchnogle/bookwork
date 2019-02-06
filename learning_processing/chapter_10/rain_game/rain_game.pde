@@ -22,7 +22,7 @@ void draw() {
   catcher.display();
   
   if (timer.is_finished()) {
-    drops[total_drops] = new Drop(random(4, 10));
+    drops[total_drops] = new Drop((int)random(6, 12));
     total_drops++;
     
     if (total_drops >= drops.length) {
