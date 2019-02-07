@@ -2,7 +2,7 @@ int[] random_counts;
 
 void setup() {
   //fullScreen(); // slow
-  size(800, 400);
+  size(800, 450);
   
   random_counts = new int[100];
 }

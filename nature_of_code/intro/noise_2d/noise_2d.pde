@@ -3,7 +3,8 @@ float xoff = 0.0;
 // Our "knobs" are: noiseDetail(), xoff, yoff
 
 void setup() {
-  fullScreen();
+  //fullScreen();
+  size(800, 450);
   
   //noiseDetail(3, 0.8);
 }

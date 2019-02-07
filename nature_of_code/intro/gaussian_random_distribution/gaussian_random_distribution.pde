@@ -3,7 +3,7 @@ import java.util.Random;
 Random generator;
 
 void setup() {
-  size(800, 400);
+  size(800, 450);
   background(255);
   
   generator = new Random();

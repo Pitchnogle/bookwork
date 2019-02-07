@@ -1,7 +1,9 @@
 Walker w;
 
 void setup() {
-  fullScreen();
+  //fullScreen();
+  size(800, 450);
+  
   background(0);
   colorMode(HSB);
   
