@@ -20,8 +20,8 @@ class Mover {
     float ax = map(noise(tx), 0, 1, -0.05, 0.05);
     float ay = map(noise(ty), 0, 1, -0.05, 0.05);
     
-    tx += 0.01;
-    ty += 0.01;
+    tx += 0.02;
+    ty += 0.02;
     
     acceleration = new PVector(ax, ay);
     

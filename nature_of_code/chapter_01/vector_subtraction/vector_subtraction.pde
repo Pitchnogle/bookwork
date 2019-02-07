@@ -1,7 +1,8 @@
 // Draws a line from the center of the window to the mouse position
 
 void setup() {
-  fullScreen(); 
+  //fullScreen();
+  size(800, 450);
 }
 
 void draw() {

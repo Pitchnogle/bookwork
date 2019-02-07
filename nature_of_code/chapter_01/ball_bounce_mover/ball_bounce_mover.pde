@@ -1,7 +1,7 @@
 Mover mover;
 
 void setup() {
-  size(800, 400);
+  size(800, 450);
   
   mover = new Mover();
 }

@@ -2,7 +2,7 @@ PVector position;
 PVector velocity;
 
 void setup() {
-  size(800, 400);
+  size(800, 450);
   
   position = new PVector(0, 0);
   velocity = new PVector(3, 5);
