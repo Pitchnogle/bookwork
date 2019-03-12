@@ -42,9 +42,8 @@ void update(float freq, int n) {
 
 void draw_wave() {
   noFill();
-  stroke(255, 0, 0);
   
-  beginShape();
+  beginShape(LINES);
   for (int i = 1; i < width; i++) {
     vertex(i - 1, wave[i - 1]);
     vertex(i,     wave[i]); 
