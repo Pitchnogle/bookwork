@@ -7,7 +7,6 @@ This repository is a code archive for various computer programming books
 - [The C# Player's Guide](csharp_players_guide)
 - [Core Java](core_java)
 - [Developing Games in Java](developing_games_in_java)
-- [Grokking Deep Learning](grokking_deep_learning)
 - [Head First C](head_first_c)
 - [Head First Design Patterns](head_first_design_patterns)
 - [Head First Java](head_first_java)
