@@ -1,8 +1,10 @@
+// Runs once when program begins
 void setup() {
-  fullScreen();
-  //size(800, 450);
+  //fullScreen();
+  size(800, 450);
 }
 
+// Runs continually
 void draw() {
   // Draw a white background
   background(255);
