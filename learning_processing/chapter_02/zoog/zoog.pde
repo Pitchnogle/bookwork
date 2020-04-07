@@ -1,5 +1,8 @@
+// Set the size of the window
 size(200, 200);
-background(255); // white
+
+// Draw a white background
+background(255);
 
 ellipseMode(CENTER);
 rectMode(CENTER);
