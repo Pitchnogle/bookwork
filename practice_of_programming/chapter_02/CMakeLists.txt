@@ -7,3 +7,4 @@ include_directories(/usr/include .)
 
 add_executable(example_array1 example_array1.c)
 add_executable(example_array2 example_array2.c)
+add_executable(example_array3 example_array3.c)
