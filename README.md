@@ -3,6 +3,7 @@
 This repository is a code archive for various computer programming books
 
 ## Content
+- [C Interfaces and Implementations](c_interfaces_and_implementations)
 - [C# 3.0 Design Patterns](csharp_design_patterns)
 - [The C# Player's Guide](csharp_players_guide)
 - [Core Java](core_java)
