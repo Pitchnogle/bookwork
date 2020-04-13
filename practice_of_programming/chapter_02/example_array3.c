@@ -125,7 +125,7 @@ int main()
     printf("The HTML character code for \"%s\" was not found!\n", s);
   }
 
-  // Let's delete that entry (it should be succesful)
+  // Let's delete that entry (it should be successful)
   // printf("\nAttempt to delete an entry:\n");
   if (!delname(s)) {
     printf("The HTML character code for \"%s\" was not found in table!\n", s);
