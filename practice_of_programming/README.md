@@ -12,7 +12,7 @@ may implement a number of example programs based on the given snippets.
 
 ## Build Instructions
 
-The code examples herin were written in C using cmake.s
+The code examples herin were written in C using cmake.
 
 ```
 mkdir build
