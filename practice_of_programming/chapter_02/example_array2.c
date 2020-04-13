@@ -150,6 +150,8 @@ int main()
     printf("The HTML character code entry \"%s\" was deleted\n", s);
   }
 
+  free (nvtab.nameval);
+  
   return 0;
 }
 
