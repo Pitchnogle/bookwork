@@ -1,9 +1,29 @@
-// This program demonstrates binary search of growable array
-//
-// This starts with the example_array1.c example, but instead of using the
-// predefined array in html_chars.h, we can add and delete entries from it
-// as we go.
+/*
+This program demonstrates binary search of growable array
 
+This starts with the example_array1.c example, but instead of using the 
+predefined array in html_chars.h, we can add and delete entries from it
+as we go.
+
+Example output:
+Looking for entry in the table:
+The HTML character code for "&frac12;" is 0xBD
+
+Looking for entry not in the table:
+The HTML character code for "&frac14;" was not found!
+
+Looking for another entry in the table
+The HTML character code for "&cent;" is 0xA2
+
+Attempt to delete an entry:
+The HTML character code entry "&cent;" was deleted
+
+Looking for the just deleted entry:
+The HTML character code for "&cent;" was not found!
+
+Attempt to delete an entry not in the table:
+The HTML character code for "&cent;" was not found in table!
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -66,7 +86,7 @@ int main()
   qsort(nvtab.nameval, nvtab.nval, sizeof (nameval_t), scmp);
 
   // Let's look for an entry
-  printf("\nLooking for entry in the table:\n");
+  printf("Looking for entry in the table:\n");
   char *s = "&frac12;";
   int i = lookup(s, nvtab.nameval, nvtab.nval);
   if (i != -1) {

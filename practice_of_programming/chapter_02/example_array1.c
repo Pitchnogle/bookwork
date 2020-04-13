@@ -1,8 +1,16 @@
-// This program demonstrates binary search of fixed array
-//
-// In the program, we search for a specific HTML character code name, and show
-// the hex code if it was found.
+/*
+This program demonstrates binary search of fixed array
 
+In the program, we search for a specific HTML character code name, and show the
+hex code if it was found.
+
+Example output:
+Search for an entry which exists in the table:
+The HTML character code for "&frac12;" is 0xBD
+
+Looking for an entry that isn't in the table:
+The HTML character code for "&dummy;" was not found!
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,9 +42,22 @@ int main()
   // character table to be sorted!
   qsort(html_chars, NELEMS(html_chars), sizeof (html_chars[0]), scmp);
 
+  // Look for an entry which exists in the table
+  printf("Search for an entry which exists in the table:\n");
   char *s = "&frac12;";
-
   int i = lookup(s, html_chars, NELEMS(html_chars));
+  if (i != -1) {
+    int v = html_chars[i].value;
+    printf("The HTML character code for \"%s\" is 0x%X\n", s, v);
+  }
+  else {
+    printf("The HTML character code for \"%s\" was not found!\n", s);
+  }
+
+  // Look for an entry which isn't in the table
+  printf("\nLooking for an entry that isn't in the table:\n");
+  s = "&dummy;";
+  i = lookup(s, html_chars, NELEMS(html_chars));
   if (i != -1) {
     int v = html_chars[i].value;
     printf("The HTML character code for \"%s\" is 0x%X\n", s, v);
