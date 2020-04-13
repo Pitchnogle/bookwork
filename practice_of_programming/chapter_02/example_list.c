@@ -1,9 +1,30 @@
 /*
 This program demonstrates linked list of nameval_t
 
+The program works in a similar way to the array version, but with a linked list.
 
 Example output:
+100 elements in nvlist
 
+Looking for entry in the list:
+The HTML character code for "&frac12;" is 0xBD
+
+Looking for entry not in the list:
+The HTML character code for "&dummy;" was not found!
+
+Looking for another entry in the list
+The HTML character code for "&cent;" is 0xA2
+
+Attempt to delete an entry:
+The HTML character code entry "&cent;" was deleted
+
+After delete: nvlist has 99 elements
+
+Looking for the just deleted entry:
+The HTML character code for "&cent;" was not found!
+
+Attempt to delete an entry not in the list:
+The HTML character code for "&cent;" was not found in list!
 */
 #include <stdio.h>
 #include <stdlib.h>
