@@ -6,17 +6,18 @@ predefined array in html_chars.h, we can add and delete entries from it
 as we go. The html_chars.txt file is used to source the initial table.
 
 Example output:
+The nameval table has 100 entries
+
 Looking for entry in the table:
 The HTML character code for "&frac12;" is 0xBD
 
 Looking for entry not in the table:
-The HTML character code for "&frac14;" was not found!
+The HTML character code for "&frac14;" is 0xBC
 
 Looking for another entry in the table
 The HTML character code for "&cent;" is 0xA2
-
-Attempt to delete an entry:
 The HTML character code entry "&cent;" was deleted
+The nameval table now has 99 entries
 
 Looking for the just deleted entry:
 The HTML character code for "&cent;" was not found!
