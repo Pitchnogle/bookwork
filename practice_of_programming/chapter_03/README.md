@@ -1,6 +1,6 @@
 # Notes
 
-This chapter contains a number of implentation of the Markov chain algorithm
+This chapter contains a number of implemetations of the Markov chain algorithm
 for generating pseudo-random text.
 
 > set _w1_ and _w2_ to the first two words in the text  
