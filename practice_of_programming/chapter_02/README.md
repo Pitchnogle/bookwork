@@ -1,4 +1,4 @@
-# Chapter 2 Notes
+# Notes
 
 
 ## Check for memory leaks

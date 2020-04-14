@@ -1,7 +1,8 @@
 /*
 This program demonstrates linked list of nameval_t
 
-The program works in a similar way to the array version, but with a linked list.
+The program works in a similar way to the array versions, but with a linked 
+list.
 
 Example output:
 100 elements in nvlist
