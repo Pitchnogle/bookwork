@@ -3,7 +3,7 @@
 This chapter contains a number of implemetations of the Markov chain algorithm
 for generating pseudo-random text.
 
-```
+***
 set _w1_ and _w2_ to the first two words in the text  
 print _w1_ and _w2_  
 loop:  
@@ -11,7 +11,7 @@ loop:
   print _w3_  
   replace _w1_ and _w2_ by _w2_ and _w3_  
   repeat loop
-```
+***
 
 The local implementation is written only in C and matches the book text outside
 of naming conventions and style.
