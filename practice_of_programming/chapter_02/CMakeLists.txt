@@ -12,3 +12,6 @@ add_executable(example_array3 example_array3.c)
 
 # Add the list example
 add_executable(example_list example_list.c)
+
+# Add the binary tree example
+add_executable(example_tree example_tree.c)
