@@ -15,3 +15,6 @@ add_executable(example_list example_list.c)
 
 # Add the binary tree example
 add_executable(example_tree example_tree.c)
+
+# Add the hash table example
+add_executable(example_hashtable example_hashtable.c)
