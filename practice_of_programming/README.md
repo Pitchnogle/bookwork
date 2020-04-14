@@ -9,6 +9,7 @@ may implement a number of example programs based on the given snippets.
 ## Table of Contents
 - [Chapter 1](chapter_01)
 - [Chapter 2](chapter_02)
+- [Chapter 3](chapter_03)
 
 ## Build Instructions
 
