@@ -12,97 +12,115 @@ enum {
   NOMEM = 2 // out-of-memory signal
 };
 
+typedef struct csv_t {
+  char *line;     // Input characters
+  char *sline;    // Line copy used by split
+  int maxline;    // size of line[] and sline[]
+  char **field;   // Field pointers
+  int maxfield;   // size of field[]
+  int nfield;     // #fields in field[]
+} csv_t;
+
 // -----------------------------------------------------------------------------
 // Function Prototypes
 // -----------------------------------------------------------------------------
 
-static void reset();
 static int end_of_line(FILE *fin, int c);
-static int split();
+static int split(csv csv);
 static char *advquoted(char *p);
 
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 // Variables
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-static char *line = NULL;     // Input characters
-static char *sline = NULL;    // Line copy used by split
-static int maxline = 0;       // size of line[] and sline[]
-static char **field = NULL;   // Field pointers
-static int maxfield = 0;      // size of field[]
-static int nfield = 0;        // #fields in field[]
-
-static char fieldsep[] = ","; // Field separator chars
+static const char fieldsep[] = ","; // Field separator chars
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Public Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-char *csv_getline(FILE *fin)
+csv csv_new()
+{
+  csv csv = malloc (sizeof (csv_t));
+  if (NULL != csv) {
+    csv->line = NULL;
+    csv->sline = NULL;
+    csv->maxline = 0;
+    csv->field = NULL;
+    csv->maxfield = 0;
+    csv->nfield = 0;
+  }
+  return csv;
+}
+
+void csv_reset(csv csv)
+{
+  if (NULL == csv) return;  
+  
+  free (csv->line);
+  free (csv->sline);
+  free (csv->field);
+  csv->line = NULL;
+  csv->sline = NULL;
+  csv->field = NULL;
+  csv->maxline = csv->maxfield = csv->nfield = 0;
+}
+
+char *csv_getline(csv csv, FILE *fin)
 {
   int i, c;
   char *newl, *news;
 
-  if (NULL == line) {
-    maxline = maxfield = 1;
-    line = malloc(maxline);
-    sline = malloc(maxline);
-    field = malloc(maxfield * sizeof (field[0]));
-    if (NULL == line || NULL == sline || NULL == field) {
-      reset();
+  if (NULL == csv->line) {
+    csv->maxline = csv->maxfield = 1;
+    csv->line = malloc(csv->maxline);
+    csv->sline = malloc(csv->maxline);
+    csv->field = malloc(csv->maxfield * sizeof (csv->field[0]));
+    if (NULL == csv->line || NULL == csv->sline || NULL == csv->field) {
+      csv_reset(csv);
       return NULL; // out-of-memory
     }
   }
   for (i = 0; (c = getc(fin)) != EOF && !end_of_line(fin, c); i++) {
-    if (i >= maxline - 1) { // grow line
-      maxline *= 2;
-      newl = realloc(line, maxline);
-      news = realloc(line, maxline);
+    if (i >= csv->maxline - 1) { // grow line
+      csv->maxline *= 2;
+      newl = realloc(csv->line, csv->maxline);
+      news = realloc(csv->line, csv->maxline);
       if (NULL == newl || NULL == news) {
-        reset();
+        csv_reset(csv);
         return NULL; // out-of-memory
       }
-      line = newl;
-      sline = news;
+      csv->line = newl;
+      csv->sline = news;
     }
-    line[i] = c;
+    csv->line[i] = c;
   }
-  line[i] = '\0';
-  if (split() == NOMEM) {
-    reset();
+  csv->line[i] = '\0';
+  if (split(csv) == NOMEM) {
+    csv_reset(csv);
     return NULL; // out-of-memory
   }
-  return (c == EOF && i == 0) ? NULL : line;
+  return (c == EOF && i == 0) ? NULL : csv->line;
 }
 
-char *csv_field(int n)
+char *csv_field(csv csv, int n)
 {
-  if (n < 0 || n >= nfield) {
+  if (n < 0 || csv == NULL || n >= csv->nfield) {
     return NULL;
   }
-  return field[n];
+  return csv->field[n];
 }
 
-int csv_nfield(void)
+int csv_nfield(csv csv)
 {
-  return nfield;
+  if (csv == NULL) return -1;
+
+  return csv->nfield;
 }
 
 // ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
 // Local Functions
 // ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
-
-// Set variables back to starting values
-static void reset()
-{
-  free (line);
-  free (sline);
-  free (field);
-  line = NULL;
-  sline = NULL;
-  field = NULL;
-  maxline = maxfield = nfield = 0;
-}
 
 // Check for and consume \r, \n, \r\n, or EOF
 static int end_of_line(FILE *fin, int c)
@@ -118,27 +136,27 @@ static int end_of_line(FILE *fin, int c)
   return eol;
 }
 
-static int split()
+static int split(csv csv)
 {
   char *p, **newf;
   char *sepp; // pointer to temporary separator character
   int sepc;   // temporary separator character
 
-  nfield = 0;
-  if (line[0] == '\0') {
+  csv->nfield = 0;
+  if (csv->line[0] == '\0') {
     return 0;
   }
-  strcpy(sline, line);
-  p = sline;
+  strcpy(csv->sline, csv->line);
+  p = csv->sline;
 
   do {
-    if (nfield >= maxfield) {
-      maxfield *= 2;
-      newf = realloc(field, maxfield * sizeof (field[0]));
+    if (csv->nfield >= csv->maxfield) {
+      csv->maxfield *= 2;
+      newf = realloc(csv->field, csv->maxfield * sizeof (csv->field[0]));
       if (NULL == newf) {
         return NOMEM;
       }
-      field = newf;
+      csv->field = newf;
     }
     if (*p == '"') {
       sepp = advquoted(++p);
@@ -148,11 +166,11 @@ static int split()
     }
     sepc = sepp[0];
     sepp[0] = '\0';
-    field[nfield++] = p;
+    csv->field[csv->nfield++] = p;
     p = sepp + 1;
   } while (sepc == ',');
 
-  return nfield;
+  return csv->nfield;
 }
 
 // Quouted-field: return pointer to next separator

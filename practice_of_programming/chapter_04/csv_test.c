@@ -12,11 +12,13 @@ int main()
 {
   char *line;
 
-  while ((line = csv_getline(stdin)) != NULL) {
+  csv csv = csv_new();
+
+  while ((line = csv_getline(csv, stdin)) != NULL) {
     int i;
-    int n = csv_nfield();
+    int n = csv_nfield(csv);
     for (i = 0; i < n; i++) {
-      printf("%s%s", csv_field(i), i == n - 1 ? "\n" : ",");
+      printf("%s%s", csv_field(csv, i), i == n - 1 ? "\n" : ",");
     }
   }
 

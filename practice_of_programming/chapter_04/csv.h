@@ -1,9 +1,25 @@
 #ifndef CSV_h
 #define CSV_h
 
+// -----------------------------------------------------------------------------
+// Definitions
+// -----------------------------------------------------------------------------
+
+typedef struct csv_t *csv;
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Public Functions
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/*
+Creates a new csv instance
+*/
+csv csv_new();
+
+/*
+Resets csv instance
+*/
+void csv_reset(csv csv);
 
 /*
 Reads one line from open input file f
@@ -14,7 +30,7 @@ Reads one line from open input file f
 - Line must be treated as read-only storage; caller must make a copy to
   preserve or change contents
 */
-char *csv_getline(FILE *f);
+char *csv_getline(csv csv, FILE *f);
 
 /*
 Returns n-th field from last line read by csv_getline()
@@ -32,13 +48,13 @@ Returns n-th field from last line read by csv_getline()
   preserve or change contents
 - Behavior undefined if called before csv_getline() is called
 */
-char *csv_field(int n);
+char *csv_field(csv csv, int n);
 
 /*
 Returns number of fields on last line read by csv_getline()
 
 Behavior undefined if called before csv_getline() is called
 */
-int csv_nfield(void);
+int csv_nfield(csv csv);
 
 #endif // CSV_h
