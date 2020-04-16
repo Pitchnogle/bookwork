@@ -10,6 +10,7 @@ may implement a number of example programs based on the given snippets.
 - [Chapter 1](chapter_01)
 - [Chapter 2](chapter_02)
 - [Chapter 3](chapter_03)
+- [Chapter 4](chapter_04)
 
 ## Build Instructions
 
