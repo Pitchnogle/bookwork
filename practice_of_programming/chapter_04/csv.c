@@ -69,7 +69,8 @@ char *csv_getline(FILE *fin)
   }
   line[i] = '\0';
   if (split() == NOMEM) {
-
+    reset();
+    return NULL; // out-of-memory
   }
   return (c == EOF && i == 0) ? NULL : line;
 }
