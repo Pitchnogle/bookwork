@@ -19,6 +19,7 @@ This repository is a code archive for various computer programming books
 - [Learning C# by Developing Games with Unity 5.x](learning_csharp_by_games_unity)
 - [Learning Processing](learning_processing)
 - [The Nature of Code](nature_of_code)
+- [Obfuscated C and Other Mysteries](obfuscated_c)
 - [The Practice of Programming](practice_of_programming)
 - [Unity Game Development in 24 Hours](unity_game_development_24hours)
   
