@@ -47,6 +47,8 @@ unsigned int hash(char *str);
 
 nameval_t *lookup(char *name, int create, int value);
 
+void free_all(nameval_t *symtab[NHASH]);
+
 // =============================================================================
 // Main Program
 // =============================================================================
@@ -102,6 +104,8 @@ int main()
     printf("The HTML character code for \"%s\" was not found!\n", s);
   }
 
+  free_all(symtab);
+
   return 0;
 }
 
@@ -156,4 +160,19 @@ nameval_t *lookup(char *name, int create, int value)
     symtab[h] = sym;
   }
   return sym;
+}
+
+void free_all(nameval_t *symtab[NHASH])
+{
+  int i;
+  for (i = 0; i < NHASH; i++) {
+    nameval_t *list = symtab[i];
+    nameval_t *next;
+
+    for ( ; list != NULL; list = list->next) {
+      next = list->next;
+      free (list->name);
+      free (list);
+    }
+  }
 }

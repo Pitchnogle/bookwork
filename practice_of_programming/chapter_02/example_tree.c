@@ -47,6 +47,8 @@ nameval_t *nrlookup(nameval_t *tree, char *name);
 
 void print_nv(nameval_t *p, void *arg);
 
+void free_nv(nameval_t *p, void *arg);
+
 void apply_inorder(nameval_t *tree, void (*func)(nameval_t*, void*), void *arg);
 
 // =============================================================================
@@ -102,6 +104,9 @@ int main()
 
   // Let's display the tree
   // apply_inorder(nvtree, print_nv, "%s 0x%X\n");
+
+  // Free the allocated memory
+  apply_inorder(nvtree, free_nv, NULL);
 
   return 0;
 }
@@ -205,6 +210,12 @@ void print_nv(nameval_t *p, void *arg)
   char *fmt;
   fmt = (char*)arg;
   printf(fmt, p->name, p->value);
+}
+
+void free_nv(nameval_t *p, void *arg)
+{
+  free(p->name);
+  free(p);
 }
 
 void apply_inorder(nameval_t *tree, void (*func)(nameval_t*, void*), void *arg)
