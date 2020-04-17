@@ -9,7 +9,7 @@ may implement a number of example programs based on the given snippets.
 ## Table of Contents
 - [Chapter 1](chapter_01)
 - [Chapter 2](chapter_02)  
-  Example implementations for some common data structure such as fixed arrays, 
+  Example implementations for some common data structures such as fixed arrays, 
   growable arrays, linked-list, binary tree, and hashtable
 - [Chapter 3](chapter_03)  
   Markov chain used to produce randomized text

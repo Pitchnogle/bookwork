@@ -1,6 +1,6 @@
 # Notes
 
-The implementation here corresponds to modification needed for Exercise 4-8
+The implementation here corresponds to modifications needed for Exercise 4-8
 
 ## Comma Separated Value (CSV) Specifications:
 - Fields are separated by commas
