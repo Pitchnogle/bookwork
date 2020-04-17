@@ -11,3 +11,4 @@ project(c_interfaces_and_implementations C)
 
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 
+subdirs(test)
