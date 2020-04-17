@@ -131,10 +131,7 @@ state_t *lookup(char *prefix[NPREF], int create)
     }
   }
   if (create) {
-    sp = malloc(sizeof (state_t));
-    if (NULL == sp) {
-      exit(1);
-    }
+    sp = emalloc(sizeof (state_t));
     for (i = 0; i < NPREF; i++) {
       sp->prefix[i] = prefix[i];
     }
@@ -160,10 +157,7 @@ void add_suffix(state_t *sp, char *suffix)
 {
   suffix_t *s;
 
-  s = malloc(sizeof (suffix_t));
-  if (NULL == s) {
-    exit (1);
-  }
+  s = emalloc(sizeof (suffix_t));
   s->word = suffix;
   s->next = sp->suffix;
   sp->suffix = s;
