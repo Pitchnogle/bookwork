@@ -7,19 +7,19 @@ void eprintf(char *, ...);
 // weprintf: print warning message
 void weprintf(char *, ...);
 
-// estrdup: 
+// estrdup: duplicate string with exit on error
 char *estrdup(char *);
 
-// emalloc: 
+// emalloc: malloc with exit on error
 void *emalloc(size_t);
 
-// erealloc: 
+// erealloc: realloc with exit on error
 void *erealloc(void *, size_t);
 
-// progname: 
+// progname: get program name
 char *progname(void);
 
-// setprogname: 
+// setprogname: set program name
 void setprogname(char *);
 
 #endif // UTIL_h

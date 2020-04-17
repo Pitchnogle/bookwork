@@ -41,7 +41,7 @@ void weprintf(char *fmt, ...)
 
   fflush(stdout);
   if (progname() != NULL)
-    fprintf(stderr, "%s: ", progname());
+    fprintf(stderr, "%s: warning -- ", progname());
   
   va_start(args, fmt);
   vfprintf(stderr, fmt, args);
@@ -97,4 +97,3 @@ void setprogname(char *s)
 {
   name = estrdup(s);
 }
-
