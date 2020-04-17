@@ -21,5 +21,5 @@ long. Something like a whole book or long chapters work.
 
 Usage:
 ```
-markov < [source test]
+markov source_text
 ```

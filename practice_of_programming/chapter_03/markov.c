@@ -1,9 +1,9 @@
-/*
-
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+
+#include "util.h"
 
 // -----------------------------------------------------------------------------
 // Definitions
@@ -55,8 +55,18 @@ void generate(int nwords);
 // Main Program
 // =============================================================================
 
-int main()
+int main(int argc, char *argv[])
 {
+  setprogname("markov");
+
+  // Seed the random number generator
+  srand(time(NULL));
+
+  FILE *f = fopen(argv[1], "r");
+  if (NULL == f) {
+    eprintf("can't open %s:", argv[1]);
+  }
+
   int i;
   int nwords = MAXGEN;
   char *prefix[NPREF];
@@ -65,7 +75,9 @@ int main()
     prefix[i] = NONWORD;
   }
 
-  build(prefix, stdin);
+  build(prefix, f);
+  fclose(f);
+  
   add(prefix, NONWORD);
   generate(nwords);
 
@@ -179,7 +191,8 @@ void generate(int nwords)
     if (strcmp(w, NONWORD) == 0) {
       break;
     }
-    printf("%s\n", w);
+    printf("%s ", w);
+    if (strstr(w, ".")) printf("\n");
     memmove(prefix, prefix + 1, (NPREF - 1) * sizeof (prefix[0]));
     prefix[NPREF - 1] = w;
   }

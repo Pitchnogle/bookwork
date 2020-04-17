@@ -31,6 +31,8 @@ The HTML character code for "&cent;" was not found in list!
 #include <stdlib.h>
 #include <string.h>
 
+#include "util.h"
+
 // -----------------------------------------------------------------------------
 // Data Structures
 // -----------------------------------------------------------------------------
@@ -77,8 +79,7 @@ int main()
   const char *fname = "html_chars.txt";
   FILE *f = fopen(fname, "r");
   if (NULL == f) {
-    printf("Unable to open %s\n", fname);
-    exit (1);
+    eprintf("unable to open %s:", fname);
   }
   build(f);
   fclose(f);
@@ -187,10 +188,7 @@ nameval_t *new_item(char *name, int value)
 {
   nameval_t *newp;
 
-  newp = malloc(sizeof (nameval_t));
-  if (NULL == newp) {
-    exit(1);
-  }
+  newp = emalloc(sizeof (nameval_t));
   newp->name = strdup(name);
   newp->value = value;
   newp->next = NULL;
@@ -237,7 +235,7 @@ nameval_t *del_item(nameval_t *list, char *name)
     }
     prev = p;
   }
-  // item not in list
+  weprintf("del_item: %s not in list", name);
   return NULL;
 }
 
