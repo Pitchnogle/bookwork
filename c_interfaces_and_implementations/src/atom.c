@@ -112,7 +112,7 @@ const char *Atom_new(const char *str, int len)
   for (h = 0, i = 0; i < len; i++)
     h = (h << 1) + scatter[(unsigned char)str[i]];
 
-  h &= NELEMS(buckets)-1;
+  h &= NELEMS(buckets) - 1;
   for (p = buckets[h]; p; p = p->link)
     if (len == p->len) {
       for (i = 0; i < len && p->str[i] == str[i]; )
@@ -126,6 +126,7 @@ const char *Atom_new(const char *str, int len)
   p->str = (char *)(p + 1);
   if (len > 0)
     memcpy(p->str, str, len);
+
   p->str[len] = '\0';
   p->link = buckets[h];
   buckets[h] = p;
@@ -135,15 +136,19 @@ const char *Atom_new(const char *str, int len)
 
 int Atom_length(const char *str)
 {
+  unsigned long h;
   struct atom *p;
   int i;
 
   assert(str);
 
-  for (i = 0; i < NELEMS(buckets); i++)
-    for (p = buckets[i]; p; p = p->link)
-      if (p->str == str)
-        return p->len;
+  for (h = 0, i = 0; i < strlen(str); i++)
+    h = (h << 1) + scatter[(unsigned char)str[i]];
+
+  h &= NELEMS(buckets) - 1;
+  for (p = buckets[h]; p; p = p->link)
+    if (p->str == str)
+      return p->len;
 
   assert(0);
   return 0;
