@@ -3,7 +3,10 @@
 cmake_minimum_required (VERSION 2.8)
 
 # Set the include directories
-include_directories(/usr/include .)
+include_directories(/usr/include . ${SRC_DIR})
 
-# Add the csv test
-add_executable(testme test.c ${SRC_DIR}/mem.c ${SRC_DIR}/atom.c ${SRC_DIR}/except.c ${SRC_DIR}/stack.c)
+# Add the arith test
+add_executable(arith_test arith_test.c test_util.c ${SRC_DIR}/arith.c)
+
+# Add the stack test
+add_executable(stack_test stack_test.c test_util.c ${SRC_DIR}/stack.c ${SRC_DIR}/mem.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
