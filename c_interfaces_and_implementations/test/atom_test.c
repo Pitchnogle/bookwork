@@ -113,8 +113,8 @@ void test_string_atom()
 
   int i;
   for (i = 0; i < sizeof (str) / sizeof (str[0]); i++) {
-    const char *s = Atom_string(str[0]);
-    pass = pass && strcmp(str[0], s) == 0;
+    const char *s = Atom_string(str[i]);
+    pass = pass && strcmp(str[i], s) == 0;
   }
 
   print_results("Test string atom()", pass);
