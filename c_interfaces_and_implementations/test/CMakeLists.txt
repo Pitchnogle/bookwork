@@ -10,3 +10,6 @@ add_executable(arith_test arith_test.c test_util.c ${SRC_DIR}/arith.c)
 
 # Add the stack test
 add_executable(stack_test stack_test.c test_util.c ${SRC_DIR}/stack.c ${SRC_DIR}/mem.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
+
+# Add the atom test
+add_executable(atom_test atom_test.c test_util.c ${SRC_DIR}/atom.c ${SRC_DIR}/mem.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
