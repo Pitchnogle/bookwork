@@ -13,6 +13,8 @@
 // Test Functions
 // -----------------------------------------------------------------------------
 
+int *new_int(int i);
+
 void test_null_stack();
 void test_empty_stack();
 void test_pop_empty_stack();
@@ -39,6 +41,14 @@ int main()
 // ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
 // Local Functions
 // ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
+
+int *new_int(int i)
+{
+  int *p;
+  NEW(p);
+  *p = i;
+  return p;
+}
 
 void test_null_stack()
 {
@@ -127,18 +137,10 @@ void test_push_pop_stack(int n)
   pass = pass && stack != NULL;
   pass = pass && Stack_empty(stack);
 
-  // Allocate memory for source data
-  int *x = malloc(n * sizeof ((*x)));
-  if (NULL == x) {
-    pass = false;
-    goto exit;
-  }
-
   // Push data onto stack
   int i;
   for (i = 0; i < n; i++) {
-    x[i] = i + 1;
-    Stack_push(stack, &x[i]);
+    Stack_push(stack, new_int(i + 1));
   }
   pass = pass && !Stack_empty(stack);
 
@@ -147,13 +149,14 @@ void test_push_pop_stack(int n)
   for (i = 0, j = n; i < n; i++, j--) {
     int *v = Stack_pop(stack);
     pass = pass && *v == j;
+    // Done with popped value so free it
+    free (v);
   }
 
   // Fully popped stack should be empty
   pass = pass && Stack_empty(stack);
 
 exit:
-  if (NULL != x) free (x);
 
   Stack_free(&stack);
 
