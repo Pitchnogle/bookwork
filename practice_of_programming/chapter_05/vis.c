@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
 
 #include "util.h"
@@ -7,7 +8,7 @@
 // Function Prototypes
 // -----------------------------------------------------------------------------
 
-void print_color_char(int c);
+void hexdump(unsigned int addr_offset, char *buf, unsigned int len);
 
 void vis(char *name, FILE *fin);
 
@@ -42,25 +43,59 @@ int main(int argc, char *argv[])
 // Local Functions
 // ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
 
+#define ROW_LEN 16
 
-void print_color_char(int c)
+void hexdump(unsigned int addr_offset, char *buf, unsigned int len)
 {
-  if (isprint(c))
-    printf("%c", c);
-  else
-    // Display non-printable as blue '.'
-    printf("\033[0;34m.\033[0m");
+  int i;
+
+  // Display the address offset
+  printf("%08x  ", addr_offset);
+
+  // Display the hex bytes
+  for (i = 0; i < ROW_LEN; i++) {
+    if (i < len)
+      printf("%02x ", buf[i] & 0xff);
+    else
+      printf("   ");
+    if (i == ROW_LEN / 2 - 1)
+      printf(" ");
+  }
+  printf(" |");
+
+  // Display same as ASCII
+  for (i = 0; i < ROW_LEN; i++) {
+    if (i < len)
+      if (isprint(buf[i]))
+        printf("%c", buf[i]);
+      else
+        printf(".");
+    else
+      printf(" ");
+  }
+
+  printf("|\n");
 }
 
 void vis(char *name, FILE *fin)
 {
   int c, i;
+  unsigned int addr_offset = 0;
+
+  char buf[ROW_LEN];
 
   do {
     for (i = 0; (c = getc(fin)) != EOF; ) {
-      print_color_char(c);
-      if (i++ % 80 == 0)
-        printf("\n");
+      buf[i++] = c;
+      if (i % ROW_LEN == 0) {
+        hexdump(addr_offset, buf, ROW_LEN);
+        addr_offset += ROW_LEN;
+        memset(buf, 0, ROW_LEN);
+        i = 0;
+      }
     }
   } while (c != EOF);
+
+  // Display remaining buffer
+  hexdump(addr_offset, buf, i);
 }
