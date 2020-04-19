@@ -13,3 +13,9 @@ add_executable(stack_test stack_test.c test_util.c ${SRC_DIR}/stack.c ${SRC_DIR}
 
 # Add the atom test
 add_executable(atom_test atom_test.c test_util.c ${SRC_DIR}/atom.c ${SRC_DIR}/mem.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
+
+# Add the mem test
+add_executable(mem_test mem_test.c test_util.c ${SRC_DIR}/mem.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
+
+# Add the memchk test
+add_executable(memchk_test memchk_test.c test_util.c ${SRC_DIR}/memchk.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
