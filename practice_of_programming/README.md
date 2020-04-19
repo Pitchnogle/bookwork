@@ -15,6 +15,8 @@ may implement a number of example programs based on the given snippets.
   Markov chain used to produce randomized text
 - [Chapter 4](chapter_04)  
   CSV reader module
+- [Chapter 5](chapter_05)  
+  Debugging advice. Two simple file readers
 
 ## Build Instructions
 
