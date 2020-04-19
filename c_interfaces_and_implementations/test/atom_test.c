@@ -16,6 +16,7 @@
 
 void test_null_length_atom();
 void test_null_string_atom();
+void test_no_exist_string();
 void test_int_atom();
 void test_string_atom();
 
@@ -43,6 +44,7 @@ int main()
 {
   test_null_length_atom();
   test_null_string_atom();
+  test_no_exist_string();
   test_int_atom();
   test_string_atom();
 
@@ -91,6 +93,19 @@ void test_null_string_atom()
   print_results("Test NULL string atom()", pass);
 }
 
+void test_no_exist_string()
+{
+  bool pass = false;
+
+  TRY
+    Atom_length("~~ no exist ~~"); // check a string which hasn't been added
+  EXCEPT(Assert_Failed)
+    pass = true;
+  END_TRY;
+
+  print_results("Test no exist string atom()", pass);
+}
+
 void test_int_atom()
 {
   bool pass = true;
@@ -115,6 +130,7 @@ void test_string_atom()
   for (i = 0; i < sizeof (str) / sizeof (str[0]); i++) {
     const char *s = Atom_string(str[i]);
     pass = pass && strcmp(str[i], s) == 0;
+    pass = pass && Atom_length(str[i]) == strlen(str[i]);
   }
 
   print_results("Test string atom()", pass);
