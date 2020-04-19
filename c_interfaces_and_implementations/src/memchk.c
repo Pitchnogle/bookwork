@@ -24,11 +24,11 @@ union align {
 #endif
 };
 
-#define hash(p, t) (((unsigned long)(p)>>3) & (sizeof (t)/sizeof ((t)[0])-1))
+#define hash(p, t) (((unsigned long)(p) >> 3) & (sizeof (t)/sizeof ((t)[0]) - 1))
 
 #define NDESCRIPTORS 512
 
-#define NALLOC ((4096 + sizeof (union align) - 1)/ (sizeof (union align)))*(sizeof (union align))
+#define NALLOC ((4096 + sizeof (union align) - 1) / (sizeof (union align)))*(sizeof (union align))
 
 // -----------------------------------------------------------------------------
 // Data
@@ -66,7 +66,7 @@ void Mem_free(void *ptr, const char *file, int line)
   if (ptr) {
     struct descriptor *bp;
 
-    if (((unsigned long)ptr)%(sizeof (union align)) != 0 || (bp = find(ptr)) == NULL || bp->free)
+    if (((unsigned long)ptr) % (sizeof (union align)) != 0 || (bp = find(ptr)) == NULL || bp->free)
       Except_raise(&Assert_Failed, file, line);
 
     bp->free = freelist.free;
@@ -82,7 +82,7 @@ void *Mem_resize(void *ptr, long nbytes, const char *file, int line)
   assert(ptr);
   assert(nbytes > 0);
 
-  if (((unsigned long)ptr)%(sizeof (union align)) != 0 || (bp = find(ptr)) == NULL || bp->free)
+  if (((unsigned long)ptr) % (sizeof (union align)) != 0 || (bp = find(ptr)) == NULL || bp->free)
     Except_raise(&Assert_Failed, file, line);
 
   newptr = Mem_alloc(nbytes, file, line);
@@ -111,7 +111,7 @@ static struct descriptor *dalloc(void *ptr, long size, const char *file, int lin
   static int nleft;
 
   if (nleft <= 0) {
-    avail = malloc(NDESCRIPTORS*sizeof (*avail));
+    avail = malloc(NDESCRIPTORS * sizeof (*avail));
     if (avail == NULL)
       return NULL;
     nleft = NDESCRIPTORS;
@@ -134,7 +134,7 @@ void *Mem_alloc(long nbytes, const char *file, int line)
 
   assert(nbytes > 0);
 
-  nbytes = ((nbytes + sizeof (union align) - 1) / (sizeof (union align)))*(sizeof (union align));
+  nbytes = ((nbytes + sizeof (union align) - 1) / (sizeof (union align))) * (sizeof (union align));
   for (bp = freelist.free; bp; bp = bp->free) {
     if (bp->size > nbytes) {
       bp->size -= nbytes;
