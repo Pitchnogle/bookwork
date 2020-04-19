@@ -147,8 +147,14 @@ int Atom_length(const char *str)
 
   h &= NELEMS(buckets) - 1;
   for (p = buckets[h]; p; p = p->link)
-    if (p->str == str)
+    if (strcmp(p->str, str) == 0)
       return p->len;
+
+  // Slow version: pre-exercise 3.8
+  // for (i = 0; i < NELEMS(buckets); i++)
+  //   for (p = buckets[i]; p; p = p->link)
+  //     if (strcmp(p->str, str) == 0)
+  //       return p->len;
 
   assert(0);
   return 0;
