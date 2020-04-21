@@ -19,3 +19,6 @@ add_executable(mem_test mem_test.c test_util.c ${SRC_DIR}/mem.c ${SRC_DIR}/asser
 
 # Add the memchk test
 add_executable(memchk_test memchk_test.c test_util.c ${SRC_DIR}/memchk.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
+
+# Add the memchk test
+add_executable(memchk_leak_test memchk_leak_test.c test_util.c ${SRC_DIR}/memchk.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
