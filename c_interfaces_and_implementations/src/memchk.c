@@ -168,3 +168,14 @@ void *Mem_alloc(long nbytes, const char *file, int line)
   assert(0);
   return NULL;
 }
+
+void Mem_leak(void (*apply)(void *ptr, long size, const char *file, int line, void *cl), void *cl)
+{
+  int i;
+  for (i = 0; i < 2048; i++) {
+    if (htab[i] != NULL && htab[i]->free == NULL) {
+      struct descriptor *p = htab[i];
+      apply(p->ptr, p->size, p->file, p->line, cl);
+    }
+  }
+}
