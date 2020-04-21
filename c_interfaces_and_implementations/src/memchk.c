@@ -9,6 +9,8 @@
 // Definitions
 // -----------------------------------------------------------------------------
 
+#define TOTAL_BUCKETS 2048
+
 union align {
 #ifdef MAXALIGN
   char pad[MAXALIGN];
@@ -43,7 +45,7 @@ static struct descriptor {
   long size;
   const char *file;
   int line;
-} *htab[2048];
+} *htab[TOTAL_BUCKETS];
 
 static struct descriptor freelist = { &freelist };
 
@@ -169,13 +171,33 @@ void *Mem_alloc(long nbytes, const char *file, int line)
   return NULL;
 }
 
+// -----------------------------------------------------------------------------
+// Memory Leak
+// -----------------------------------------------------------------------------
+
+// In order to ensure a memory leak, need to allocate > TOTAL_BUCKETS times. To
+// make this easier to test, added the utility function Mem_num_leaks() to get
+// back the number of leaks. This content added as Exercise 5.5
+
+static int num_leaks = 0;
+
 void Mem_leak(void (*apply)(void *ptr, long size, const char *file, int line, void *cl), void *cl)
 {
+  struct descriptor *p;
+  
+  num_leaks = 0;
+
   int i;
-  for (i = 0; i < 2048; i++) {
-    if (htab[i] != NULL && htab[i]->free == NULL) {
-      struct descriptor *p = htab[i];
-      apply(p->ptr, p->size, p->file, p->line, cl);
-    }
-  }
+  for (i = 0; i < TOTAL_BUCKETS; i++)
+    if (htab[i] != NULL)
+      for (p = htab[i]; p; p = p->link)
+        if (p->free == NULL) {
+          apply(p->ptr, p->size, p->file, p->line, cl);
+          num_leaks++;
+        }
+}
+
+int Mem_num_leaks()
+{ 
+  return num_leaks;
 }
