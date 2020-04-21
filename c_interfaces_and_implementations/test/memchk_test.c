@@ -13,6 +13,12 @@
 // Test Functions
 // -----------------------------------------------------------------------------
 
+extern void Mem_leak(void (*apply)(void *ptr, long size, const char *file, int line, void *cl), void *cl);
+
+// -----------------------------------------------------------------------------
+// Test Functions
+// -----------------------------------------------------------------------------
+
 void test_zero_alloc();
 void test_zero_calloc();
 void test_negative_alloc();
@@ -23,6 +29,9 @@ void test_ok_alloc();
 void test_ok_calloc();
 void test_free();
 void test_resize();
+void test_mem_leak();
+
+void inuse(void *ptr, long size, const char*file, int line, void *cl);
 
 // =============================================================================
 // Main Program
@@ -43,6 +52,7 @@ int main()
   test_ok_calloc();
   test_free();
   test_resize();
+  test_mem_leak();
 
   return 0;
 }
@@ -309,4 +319,32 @@ void test_resize()
   FREE(x);
 
   print_results("Test RESIZE()", pass);
+}
+
+void test_mem_leak()
+{
+  bool pass = true;
+
+  float *x = NULL;
+
+  TRY
+    x = ALLOC(TEST_COUNT * sizeof (*x));
+  EXCEPT(Mem_Failed)
+    pass = false;
+  END_TRY;
+ 
+  printf("Test mem leak: (there should be one leak)\n");
+  Mem_leak(inuse, stdout);
+
+  FREE(x);
+  printf("Test mem leak: (nothing should print after)\n");
+  Mem_leak(inuse, stdout);
+}
+
+void inuse(void *ptr, long size, const char *file, int line, void *cl)
+{
+  FILE *fout = cl;
+
+  fprintf(fout, "** memory in use at %p\n", ptr);
+  fprintf(fout, "This block is %ld bytes long and was allocated from %s:%d\n", size, file, line);
 }
