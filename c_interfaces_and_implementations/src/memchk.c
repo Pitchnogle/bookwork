@@ -185,6 +185,7 @@ void Mem_leak(void (*apply)(void *ptr, long size, const char *file, int line, vo
 {
   struct descriptor *p;
   
+  // Reset this each time as it may change from run to run
   num_leaks = 0;
 
   int i;
