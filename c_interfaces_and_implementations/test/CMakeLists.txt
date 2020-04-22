@@ -22,3 +22,6 @@ add_executable(memchk_test memchk_test.c test_util.c ${SRC_DIR}/memchk.c ${SRC_D
 
 # Add the memchk test
 add_executable(memchk_leak_test memchk_leak_test.c test_util.c ${SRC_DIR}/memchk.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
+
+# Add the arena test
+add_executable(arena_test arena_test.c test_util.c ${SRC_DIR}/arena.c ${SRC_DIR}/assert.c ${SRC_DIR}/except.c)
