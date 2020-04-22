@@ -2,5 +2,10 @@
 
 This folder contains content related to the book [**Head First C**](http://shop.oreilly.com/product/0636920015482.do) from O'Reilly.
 
+## Table of Contents
+- [Chapter 1](chapter_01)
+- [Chapter 2](chapter_02)
+- [Chapter 3](chapter_03)
+
 ## Useful Links
 - [C Operator Precedence](https://en.cppreference.com/w/c/language/operator_precedence)
