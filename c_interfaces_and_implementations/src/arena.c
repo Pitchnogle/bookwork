@@ -90,7 +90,7 @@ void *Arena_alloc(T arena, long nbytes, const char *file, int line)
       limit = ptr->limit;
     } 
     else {
-      long m = sizeof (union header) + nbytes + 10*1024;
+      long m = sizeof (union header) + nbytes + 10 * 1024;
       ptr = malloc(m);
       if (ptr == NULL) {
         if (file == NULL)
@@ -116,8 +116,8 @@ void *Arena_calloc(T arena, long count, long nbytes, const char *file, int line)
 
   assert(count > 0);
 
-  ptr = Arena_alloc(arena, count*nbytes, file, line);
-  memset(ptr, '\0', count*nbytes);
+  ptr = Arena_alloc(arena, count * nbytes, file, line);
+  memset(ptr, '\0', count * nbytes);
 
   return ptr;
 }
@@ -134,8 +134,9 @@ void Arena_free(T arena)
       nfree++;
       freechunks->limit = arena->limit;
     } 
-		else
+		else {
       free(arena->prev);
+    }
     *arena = tmp;
   }
 	
