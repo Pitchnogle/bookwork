@@ -18,12 +18,12 @@ int main() {
     case 'a': case 'A':
       val = 11;
       break;
-    case 'x':
+    case 'x': case 'X':
       continue;
     default:
       val = atoi(card_name);
       if (val < 1 || val > 10) {
-        puts("error");
+        puts("I don't understand that value!\n");
         continue;
       }
       break;
@@ -35,6 +35,7 @@ int main() {
     else if (val == 10) {
       count--;
     }
+
     printf("Current count: %i\n", count);
   }
 
