@@ -21,6 +21,7 @@ void test_alloc_negative();
 void test_calloc_negative();
 void test_alloc_empty();
 void test_calloc_empty();
+void test_alloc();
 
 // =============================================================================
 // Main Program
@@ -38,10 +39,10 @@ int main()
   test_calloc_negative();
   test_alloc_empty();
   test_calloc_empty();
+  test_alloc();
 
   return 0;
 }
-
 
 // ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
 // Local Functions
@@ -202,4 +203,45 @@ void test_calloc_empty()
   END_TRY;
 
   print_results("Test calloc empty", pass);
+}
+
+#define ALLOC_SIZES  8
+#define TOTAL_ALLOCS 10000
+
+void test_alloc()
+{
+  bool pass = true;
+
+  Arena_T arena = NULL;
+
+  TRY
+    arena = Arena_new();
+  EXCEPT(Arena_NewFailed)
+    pass = false;
+  END_TRY;
+
+  int alloc_size[ALLOC_SIZES] = {
+    1024, 2048, 512, 8096, 1024, 2048, 512, 512
+  };
+
+  int *x[TOTAL_ALLOCS] = {0};
+
+  int i;
+  for (i = 0; i < TOTAL_ALLOCS; i++) {
+    TRY
+      x[i] = Arena_alloc(arena, alloc_size[i % ALLOC_SIZES], __FILE__, __LINE__);
+    EXCEPT(Assert_Failed)
+      pass = false;
+    EXCEPT(Arena_Failed)
+      pass = false;
+    END_TRY;
+  }
+
+  TRY
+    Arena_dispose(&arena);
+  EXCEPT(Assert_Failed)
+    pass = false;
+  END_TRY;
+
+  print_results("Test alloc", pass);
 }
