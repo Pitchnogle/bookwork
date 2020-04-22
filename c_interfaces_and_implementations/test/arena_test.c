@@ -27,9 +27,9 @@ void test_alloc();
 // Main Program
 // =============================================================================
 
-#define TEST_COUNT   1000
-#define ALLOC_SIZES  8
-#define TOTAL_ALLOCS 1000
+#define TEST_COUNT   (1000)
+#define ALLOC_SIZES  (8)
+#define TOTAL_ALLOCS (1000)
 
 int main()
 {
