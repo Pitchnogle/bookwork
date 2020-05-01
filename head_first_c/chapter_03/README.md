@@ -1,26 +1,30 @@
 ## Notes
 
+The JSON presented in this chapter isn't actually valid; the programs have been
+modified so it is. The website indicated on page 113 doesn't exist, so we can't
+test the book version anyway.
+
 ```
 $ gcc -Wall geo2json.c -o geo2json
 $ ./geo2json < gpsdata.csv
-data=[
-{latitude: 42.363400, longitude: -71.098465, info: "Speed = 21"},
-{latitude: 42.363327, longitude: -71.097588, info: "Speed = 23"},
-{latitude: 42.363255, longitude: -71.096710, info: "Speed = 17"},
-{latitude: 42.363182, longitude: -71.095833, info: "Speed = 22"},
-{latitude: 42.363110, longitude: -71.094955, info: "Speed = 14"},
-{latitude: 42.363037, longitude: -71.094078, info: "Speed = 16"},
-{latitude: 42.362965, longitude: -71.093201, info: "Speed = 18"},
-{latitude: 42.362892, longitude: -71.092323, info: "Speed = 22"},
-{latitude: 42.362820, longitude: -71.091446, info: "Speed = 17"},
-{latitude: 42.362747, longitude: -71.090569, info: "Speed = 23"},
-{latitude: 42.362675, longitude: -71.089691, info: "Speed = 14"},
-{latitude: 42.362602, longitude: -71.088814, info: "Speed = 19"},
-{latitude: 42.362530, longitude: -71.087936, info: "Speed = 16"},
-{latitude: 42.362457, longitude: -71.087059, info: "Speed = 16"},
-{latitude: 42.362385, longitude: -71.086182, info: "Speed = 21"},
-{latitude: 29.401320, longitude: -66.027832, info: "Speed = 20"},
-{latitude: 29.132971, longitude: -71.136475, info: "Speed = 22"}
+[
+{"latitude": 42.363400, "longitude": -71.098465, "info": "Speed = 21"},
+{"latitude": 42.363327, "longitude": -71.097588, "info": "Speed = 23"},
+{"latitude": 42.363255, "longitude": -71.096710, "info": "Speed = 17"},
+{"latitude": 42.363182, "longitude": -71.095833, "info": "Speed = 22"},
+{"latitude": 42.363110, "longitude": -71.094955, "info": "Speed = 14"},
+{"latitude": 42.363037, "longitude": -71.094078, "info": "Speed = 16"},
+{"latitude": 42.362965, "longitude": -71.093201, "info": "Speed = 18"},
+{"latitude": 42.362892, "longitude": -71.092323, "info": "Speed = 22"},
+{"latitude": 42.362820, "longitude": -71.091446, "info": "Speed = 17"},
+{"latitude": 42.362747, "longitude": -71.090569, "info": "Speed = 23"},
+{"latitude": 42.362675, "longitude": -71.089691, "info": "Speed = 14"},
+{"latitude": 42.362602, "longitude": -71.088814, "info": "Speed = 19"},
+{"latitude": 42.362530, "longitude": -71.087936, "info": "Speed = 16"},
+{"latitude": 42.362457, "longitude": -71.087059, "info": "Speed = 16"},
+{"latitude": 42.362385, "longitude": -71.086182, "info": "Speed = 21"},
+{"latitude": 29.401320, "longitude": -66.027832, "info": "Speed = 20"},
+{"latitude": 29.132971, "longitude": -71.136475, "info": "Speed = 22"}
 ]
 ```
 
@@ -37,9 +41,9 @@ Then, pipe the output of `bermuda` into `geo2json`. The _parentheses_ are necess
 
 ```
 $ (./bermuda | ./geo2json) < gpsdata.csv
-data=[
-{latitude: 29.401320, longitude: -66.027832, info: "Speed = 20"},
-{latitude: 29.132971, longitude: -71.136475, info: "Speed = 22"}
+[
+{"latitude": 29.401320, "longitude": -66.027832, "info": "Speed = 20"},        
+{"latitude": 29.132971, "longitude": -71.136475, "info": "Speed = 22"}
 ]
 ```
 
@@ -105,3 +109,18 @@ $ ./order_pizza -d
 ./order_pizza: option requires an argument -- 'd'
 Unknown option: '(null)'
 ```
+
+### Extras
+
+The geo2json program can't be tested since the website referred to seems to be
+dead. In searching around for alternatives, I found this **GeoJSON** format 
+which is similar. I've written a new demo, `geo2geojson.c` which outputs into
+this format using the same csv file.
+
+```
+make geo2geojson && ./geo2geojson < gpsdata.csv
+```
+
+I found two modern resource which are useful:
+- http://geojson.io/#map=2/20.0/0.0
+- https://macwright.org/2015/03/23/geojson-second-bite.html#points
