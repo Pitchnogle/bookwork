@@ -84,7 +84,7 @@ void test_pack_unpack_char()
     pass = pass && x_c[i] == y_c[i];
   }
 
-  print_results("Pack/Unpack char: ", pass);
+  print_results("Pack/Unpack char", pass);
 }
 
 void test_pack_unpack_u8()
@@ -104,7 +104,7 @@ void test_pack_unpack_u8()
   pass = pass && x_u8[2] == y_u8[2];
   pass = pass && x_u8[3] == y_u8[3];
 
-  print_results("Pack/Unpack uint8_t: ", pass);
+  print_results("Pack/Unpack uint8_t", pass);
 }
 
 void test_pack_unpack_i8()
@@ -126,7 +126,7 @@ void test_pack_unpack_i8()
     pass == pass && x_i8[i] == y_i8[i];
   }
 
-  print_results("Pack/Unpack int8_t: ", pass);
+  print_results("Pack/Unpack int8_t", pass);
 }
 
 void test_pack_unpack_u16()
@@ -146,7 +146,7 @@ void test_pack_unpack_u16()
     pass == pass && x_u16[i] == y_u16[i];
   }
 
-  print_results("Pack/Unpack uint16_t: ", pass);
+  print_results("Pack/Unpack uint16_t", pass);
 }
 
 void test_pack_unpack_i16()
@@ -166,7 +166,7 @@ void test_pack_unpack_i16()
     pass == pass && x_i16[i] == y_i16[i];
   }
 
-  print_results("Pack/Unpack int16_t: ", pass);
+  print_results("Pack/Unpack int16_t", pass);
 }
 
 void test_pack_unpack_u32()
@@ -186,7 +186,7 @@ void test_pack_unpack_u32()
     pass == pass && x_u32[i] == y_u32[i];
   }
 
-  print_results("Pack/Unpack uint32_t: ", pass);
+  print_results("Pack/Unpack uint32_t", pass);
 }
 
 void test_pack_unpack_i32()
@@ -206,7 +206,7 @@ void test_pack_unpack_i32()
     pass == pass && x_i32[i] == y_i32[i];
   }
 
-  print_results("Pack/Unpack int32_t: ", pass);
+  print_results("Pack/Unpack int32_t", pass);
 }
 
 void test_pack_unpack_float()
@@ -230,7 +230,7 @@ void test_pack_unpack_float()
     pass == pass && x_f[i] == y_f[i];
   }
 
-  print_results("Pack/Unpack float: ", pass);
+  print_results("Pack/Unpack float", pass);
 }
 
 void test_pack_unpack_str()
@@ -246,7 +246,7 @@ void test_pack_unpack_str()
   pass = pass && strcmp(wr_buf, rd_buf) == 0;
   pass = pass && strlen(wr_buf) == strlen(rd_buf);
 
-  print_results("Pack/Unpack string: ", pass);
+  print_results("Pack/Unpack string", pass);
 }
 
 void test_pack_unpack_multi()
@@ -275,7 +275,7 @@ void test_pack_unpack_multi()
   pass = pass && strcmp(wr_buf, rd_buf) == 0;
   pass = pass && f == y_f;
 
-  print_results("Pack/Unpack multi: ", pass);
+  print_results("Pack/Unpack multi", pass);
 }
 
 void print_results(const char *msg, bool pass)
