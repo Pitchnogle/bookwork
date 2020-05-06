@@ -17,6 +17,8 @@ may implement a number of example programs based on the given snippets.
   CSV reader module
 - [Chapter 5](chapter_05)  
   Debugging advice. Two simple file readers
+- [Chapter 9](chapter_09)  
+  Packing/Unpacking binary data, grep, virtual machines
 
 ## Build Instructions
 

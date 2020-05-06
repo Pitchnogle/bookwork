@@ -35,13 +35,19 @@ int pack_type1(uint8_t *buf, uint16_t count, uint8_t val, uint32_t data) {
 }
 ```
 
+This section presented an alternate more general type of packing/unpacking with
+a similar usage of printf.
 
+The same call as above is then implemented as:
+```C
+int pack_type1(uint8_t *buf, uint16_t count, uint8_t val, uint32_t data)
+{
+  return pack(buf, "bhbi", 0x01, count, val, data);
+}
+```
 
 ## Grep
 
-
-
-
-
+This chapter also includes a simple implementation of grep.
 
 ## Virtual Machines
