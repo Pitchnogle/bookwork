@@ -51,3 +51,14 @@ int pack_type1(uint8_t *buf, uint16_t count, uint8_t val, uint32_t data)
 This chapter also includes a simple implementation of grep.
 
 ## Virtual Machines
+
+
+
+## Extra
+
+The *virtual machine* section, and the end of the chapter itself in general was 
+very interesting. The virtual machine reminded me of a program I adapted from
+Chapter 4 of K&R C.
+
+I've added a Reverse-Polish Notation (RPN) calculator from that text, as well
+as a number of other test programs.

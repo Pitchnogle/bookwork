@@ -11,3 +11,6 @@ add_executable(pack_unpack_example pack_unpack_example.c pack_unpack.c ${UTIL_DI
 
 # Add grep
 add_executable(grep grep.c ${UTIL_DIR}/util.c)
+
+# add expr test
+add_executable(expr_test expr_test.c)
