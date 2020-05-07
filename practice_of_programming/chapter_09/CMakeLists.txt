@@ -14,3 +14,11 @@ add_executable(grep grep.c ${UTIL_DIR}/util.c)
 
 # add expr test
 add_executable(expr_test expr_test.c)
+
+# add calc
+add_executable(calc calc.c)
+target_link_libraries(calc m)
+
+# add expr
+add_executable(expr expr.c)
+target_link_libraries(expr m)
