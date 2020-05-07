@@ -63,9 +63,9 @@ Chapter 4 of K&R C.
 I've added a Reverse-Polish Notation (RPN) calculator from that text, as well
 as a number of other test programs.
 
-- **calc.c**  
+- [calc.c](calc.c)  
   An RPM calculator
-- **expr.c**  
+- [expr.c](expr.c)  
   An RPM calculator which uses strtok
-- **expr_test.c**  
+- [expr_test.c](expr_test.c)  
   A strtok test program
