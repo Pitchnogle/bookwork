@@ -91,6 +91,7 @@ $ cat others.csv
 ### Pizza Pieces Solution
 
 ```
+$ gcc -Wall order_pizza.c -o order_pizza
 $ ./order_pizza Anchovies
 Ingredients:
 Anchovies
