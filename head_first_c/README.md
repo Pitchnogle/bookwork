@@ -13,4 +13,4 @@ This folder contains content related to the book [**Head First C**](http://shop.
 
 ## Style
 
-The coding style for example written for this book were based on (OpenBSD)[https://man.openbsd.org/style].
+The coding style for examples written for this book were based on [OpenBSD](https://man.openbsd.org/style).
