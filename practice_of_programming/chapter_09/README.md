@@ -52,7 +52,12 @@ This chapter also includes a simple implementation of grep.
 
 ## Virtual Machines
 
+Several (partial) implementations of virtual machine were provided; each version
+builds in complexity.
 
+Each of the virtual machines builds on a `Tree` structure. In order to better
+appreciate how the virtual machines are used, it would be necessary to make a
+function to build up a tree structure given some expression to evaluate.
 
 ## Extra
 
