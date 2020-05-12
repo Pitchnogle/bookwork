@@ -1,31 +1,32 @@
 #include <stdio.h>
 
-int main()
+int
+main()
 {
-  float latitude;
-  float longitude;
-  char info[80];
-  int started = 0;
+	float latitude;
+	float longitude;
+	char info[80];
+	int started = 0;
 
-  puts("[");
-  while (scanf("%f,%f,%79[^\r\n]", &latitude, &longitude, info) == 3) {
-    if (started)
-      printf(",\n");
-    else
-      started = 1;
-    
-    if (latitude < -90 || latitude > 90) {
-      fprintf(stderr, "Invalid latitude: %f\n", latitude);
-      return 2;
-    }
-    if (longitude < -180 || longitude > 180) {
-      fprintf(stderr, "Invalid longitude: %f\n", longitude);
-      return 2;
-    }
+	puts("[");
+	while (scanf("%f,%f,%79[^\r\n]", &latitude, &longitude, info) == 3) {
+		if (started)
+			printf(",\n");
+		else
+			started = 1;
 
-    printf("{\"latitude\": %f, \"longitude\": %f, \"info\": \"%s\"}", latitude, longitude, info);
-  }
-  puts("\n]");
+		if (latitude < -90 || latitude > 90) {
+			fprintf(stderr, "Invalid latitude: %f\n", latitude);
+			return 2;
+		}
+		if (longitude < -180 || longitude > 180) {
+			fprintf(stderr, "Invalid longitude: %f\n", longitude);
+			return 2;
+		}
 
-  return 0;
+		printf("{\"latitude\": %f, \"longitude\": %f, \"info\": \"%s\"}", latitude, longitude, info);
+	}
+	puts("\n]");
+
+	return 0;
 }

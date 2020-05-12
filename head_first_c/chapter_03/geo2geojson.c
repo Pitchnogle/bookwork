@@ -15,33 +15,34 @@ https://macwright.org/2015/03/23/geojson-second-bite.html
 */
 #include <stdio.h>
 
-int main()
+int
+main()
 {
-  float latitude;
-  float longitude;
-  char info[80];
-  int started = 0;
+	float latitude;
+	float longitude;
+	char info[80];
+	int started = 0;
 
-  printf("{\"type\":\"FeatureCollection\",\"features\": [\n");
-  while (scanf("%f,%f,%79[^\r\n]", &latitude, &longitude, info) == 3) {
-    if (started)
-      printf(",\n");
-    else
-      started = 1;
-    
-    if (latitude < -90 || latitude > 90) {
-      fprintf(stderr, "Invalid latitude: %f\n", latitude);
-      return 2;
-    }
-    if (longitude < -180 || longitude > 180) {
-      fprintf(stderr, "Invalid longitude: %f\n", longitude);
-      return 2;
-    }
+	printf("{\"type\":\"FeatureCollection\",\"features\": [\n");
+	while (scanf("%f,%f,%79[^\r\n]", &latitude, &longitude, info) == 3) {
+		if (started)
+			printf(",\n");
+		else
+			started = 1;
 
-    printf("{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[");
-    printf("%f, %f]},\"properties\":{\"info\": \"%s\"}}", longitude, latitude, info);
-  }
-  puts("]}\n");
+		if (latitude < -90 || latitude > 90) {
+			fprintf(stderr, "Invalid latitude: %f\n", latitude);
+			return 2;
+		}
+		if (longitude < -180 || longitude > 180) {
+			fprintf(stderr, "Invalid longitude: %f\n", longitude);
+			return 2;
+		}
 
-  return 0;
+		printf("{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[");
+		printf("%f, %f]},\"properties\":{\"info\": \"%s\"}}", longitude, latitude, info);
+	}
+	puts("]}\n");
+
+	return 0;
 }

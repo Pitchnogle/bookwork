@@ -1,44 +1,43 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int main(int argc, char **argv) {
-  char *delivery = "";
-  int thick = 0;
-  int count = 0;
-  char ch;
+int
+main(int argc, char *argv[])
+{
+	char *delivery = "";
+	int thick = 0;
+	int count = 0;
+	char ch;
 
-  while ((ch = getopt(argc, argv, "d:t")) != EOF) {
-    switch (ch) {
-    case 'd':
-      delivery = optarg;
-      break;
-    
-    case 't':
-      thick = 1;
-      break;
-    
-    default:
-      fprintf(stderr, "Unknown option: '%s'\n", optarg);
-      return 1;
-    }
-  }
+	while ((ch = getopt(argc, argv, "d:t")) != EOF) {
+		switch (ch) {
+		case 'd':
+			delivery = optarg;
+			break;
 
-  argc -= optind;
-  argv += optind;
-  
-  if (thick) {
-    puts("Thick crust.");
-  }
+		case 't':
+			thick = 1;
+			break;
 
-  if (delivery[0]) {
-    printf("To be delivered %s.\n", delivery);
-  }
+		default:
+			fprintf(stderr, "Unknown option: '%s'\n", optarg);
+			return 1;
+		}
+	}
 
-  puts("Ingredients:");
+	argc -= optind;
+	argv += optind;
 
-  for (count = 0; count < argc; count++) {
-    puts(argv[count]);
-  }
+	if (thick)
+		puts("Thick crust.");
 
-  return 0;
+	if (delivery[0])
+		printf("To be delivered %s.\n", delivery);
+
+	puts("Ingredients:");
+
+	for (count = 0; count < argc; count++)
+		puts(argv[count]);
+
+	return 0;
 }
