@@ -113,4 +113,4 @@ u.bitfield.baz = 0x1
 
 This is the kind of idea which could be useful for something like a low-level 
 device driver to set specific bits within a register, but also get and set the 
-whole register and once.
+whole register at once.
