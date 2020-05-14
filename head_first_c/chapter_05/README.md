@@ -99,9 +99,9 @@ This order contains 10.50 pints of orange juice
 
 ### Extras
 
-The last section of this chapter briefly covers bitfields, but the books example
-isn't very complete. I added a simple example which combines bitfields and 
-unions.
+The last section of this chapter briefly covers bitfields, but the book's 
+example isn't very complete. I added a simple example which combines bitfields
+and a union.
 
 ```
 $ gcc -Wall bitunion.c -o bitunion && ./bitunion
@@ -110,3 +110,7 @@ u.bitfield.foo = 0x5
 u.bitfield.bar = 0x3
 u.bitfield.baz = 0x1
 ```
+
+This is the kind of idea which could be useful for something like a low-level 
+device driver to set specific bits within a register, but also get and set the 
+whole register and once.
