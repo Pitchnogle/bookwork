@@ -7,6 +7,7 @@ This folder contains content related to the book [**Head First C**](http://shop.
 - [Chapter 2](chapter_02)
 - [Chapter 3](chapter_03)
 - [Chapter 4](chapter_04)
+- [Chapter 5](chapter_05)
 
 ## Useful Links
 - [C Operator Precedence](https://en.cppreference.com/w/c/language/operator_precedence)
