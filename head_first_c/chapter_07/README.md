@@ -4,7 +4,7 @@ This chapter is all about function pointers.
 
 ### Looking for Mr. Right...
 
-This shows one us of function pointers to avoid code duplication.
+The demonstrated using function pointers to avoid code duplication.
 ```
 $ gcc -Wall find.c -o find && ./find
 Search results:
