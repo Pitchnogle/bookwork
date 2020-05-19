@@ -22,6 +22,10 @@ Checksum is 89548156
 To use the <> brackets in the #include lines, we need to put those headers into
 the standard locations, such as /usr/local/include
 
+...or...
+
+indicate location of headers using the -I option
+
 ### Make Magnets (pg 361)
 
 ```
@@ -44,10 +48,8 @@ The final section shows how to make a dynamic library. This section is not as
 well structured as the static library section.
 
 To make things easier, I ended up just adding all the hfcal stuff into the
-makefile.
-
-Since we are running the test program from the local folder, we need to modify
-the LD_LIBRARY_PATH environmental path.
+makefile. Since we are running the test program from the local folder, we need 
+to modify the LD_LIBRARY_PATH environmental path.
 ```
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/.
 $ ./hfcal_test
