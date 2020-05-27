@@ -26,7 +26,7 @@ same types of data either.
 >>> print(movies)
 ['The Holy Grail', 1975, 'The Life of Brian', 1979, 'The Meaning of Life', 1983]
 ```
-It's time to iterate
+It's time to iterate...
 ```
 >>> movies = ["The Holy Grail", "The Life of Brian", "The Meaning of Life"]
 >>> for each_movie in movies:
@@ -61,11 +61,11 @@ Eric Idle
 Create a function in python
 ```python
 >>> def print_lol(the_list):
-...     for each_item in the_list:
-...             if isinstance(each_item, list):
-...                     print_lol(each_item)
-...             else:
-...                     print(each_item)
+... 	for each_item in the_list:
+... 		if isinstance(each_item, list):
+... 			print_lol(each_item)
+... 		else:
+... 			print(each_item)
 ... 
 ```
 ```
