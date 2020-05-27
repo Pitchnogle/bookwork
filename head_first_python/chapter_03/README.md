@@ -53,7 +53,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2, in <module>
 ValueError: too many values to unpack (expected 2)
 ```
-The trouble is the original data has some lines which contain (pause) and no
+The trouble is the original data has some lines which contain "(pause)" and no
 colons to split. The book covers two approaches to deal with this. The first is
 to apply extra logic before calling split. The second approach uses exception 
 handling.
