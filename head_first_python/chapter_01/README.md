@@ -5,20 +5,20 @@ $ python3 -V
 Python 3.6.7
 ```
 Lists use 0-based indexing.
-```python
+```
 >>> movies = ["The Holy Grail", "The Life of Brian", "The Meaning of Life"]
 >>> print(movies[1])
 The Life of Brian
 ```
 One neat trick is to use _negative_ indexing. The last item in a list is at
 index -1.
-```python
+```
 >>> print(movies[-1])
 The Meaning of Life
 ```
 We can add items to a list in a number of ways. Lists don't have to store the
 same types of data either.
-```python
+```
 >>> movies = ["The Holy Grail", "The Life of Brian", "The Meaning of Life"]
 >>> movies.insert(1, 1975)
 >>> movies.insert(3, 1979)
@@ -27,7 +27,7 @@ same types of data either.
 ['The Holy Grail', 1975, 'The Life of Brian', 1979, 'The Meaning of Life', 1983]
 ```
 It's time to iterate
-```python
+```
 >>> movies = ["The Holy Grail", "The Life of Brian", "The Meaning of Life"]
 >>> for each_movie in movies:
 ...     print(each_movie)
@@ -37,7 +37,7 @@ The Life of Brian
 The Meaning of Life
 ```
 Iterate using while...
-```python
+```
 >>> movies = ["The Holy Grail", "The Life of Brian", "The Meaning of Life"]
 >>> count = 0
 >>> while count < len(movies):
@@ -49,7 +49,7 @@ The Life of Brian
 The Meaning of Life
 ```
 Store lists within lists
-```python
+```
 >>> movies = ["The Holy Grail", 1975, "Terry Jones & Terry Gilliam", 91, ["Graham Chapman", ["Michael Palin",
 ... "John Cleese", "Terry Gilliam", "Eric Idle", "Terry Jones"]]]
 >>> print(movies[4][1][3])
@@ -68,7 +68,7 @@ Create a function in python
 ...                     print(each_item)
 ... 
 ```
-```python
+```
 >>> print_lol(movies)
 The Holy Grail
 1975
