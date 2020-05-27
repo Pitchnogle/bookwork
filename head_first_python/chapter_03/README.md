@@ -36,10 +36,10 @@ Take a closer look at the data...
 ```
 >>> data = open('sketch.txt')
 >>> for each_line in data:
-... 	(role, line_spoken) = each_line.split(':')
-... 	print(role, end='')
-... 	print(' said: ', end='')
-... 	print(line_spoken, end='')
+...     (role, line_spoken) = each_line.split(':')
+...     print(role, end='')
+...     print(' said: ', end='')
+...     print(line_spoken, end='')
 ... 
 Man said:  Is this the right room for an argument?
 Other Man said:  I've told you once.
@@ -59,13 +59,13 @@ to apply extra logic before calling split. The second approach uses exception
 handling.
 ```
 >>> for each_line in data:
-... 	try:
-... 		(role, line_spoken) = each_line.split(':', 1)
-... 		print(role, end='')
-... 		print(' said: ', end='')
-... 		print(line_spoken, end='')
-... 	 except:
-... 		pass
+...     try:
+...         (role, line_spoken) = each_line.split(':', 1)
+...         print(role, end='')
+...         print(' said: ', end='')
+...         print(line_spoken, end='')
+...     except:
+...         pass
 ... 
 Man said:  Is this the right room for an argument?
 Other Man said:  I've told you once.
@@ -85,18 +85,18 @@ Man said:  Yes it is!
 ```
 >>> import os
 >>> try:
-... 	data = open('sketch.txt')
-... 	for each_line in data:
-... 		try:
-... 			(role, line_spoken) = each_line.split(':', 1)
-... 			print(role, end='')
-... 			print(' said: ', end='')
-... 			print(line_spoken, end='')
-... 		except ValueError:
-... 			pass
-... 	data.close()
+...     data = open('sketch.txt')
+...     for each_line in data:
+...         try:
+...             (role, line_spoken) = each_line.split(':', 1)
+...             print(role, end='')
+...             print(' said: ', end='')
+...             print(line_spoken, end='')
+...         except ValueError:
+...             pass
+...     data.close()
 ... except IOError:
-... 	print('The data file is missing!')
+...     print('The data file is missing!')
 ... 
 Man said:  Is this the right room for an argument?
 Other Man said:  I've told you once.
