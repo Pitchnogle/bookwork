@@ -1,7 +1,6 @@
 # Chapter 2
 
 ## Build a distribution file
-
 ```
 $ python3 setup.py sdist
 running sdist
@@ -21,7 +20,6 @@ removing 'nester-1.0.0' (and everything under it)
 ```
 
 ## Install the distribution into local copy of Python
-
 ```
 $ sudo python3 setup.py install
 [sudo] password for username:
