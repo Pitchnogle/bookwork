@@ -1,22 +1,22 @@
 # Chapter 5
 ```
 with open('james.txt') as jaf:
-	data = jaf.readline()
+    data = jaf.readline()
 
 james = data.strip().split(',')
 
 with open('julie.txt') as juf:
-	data = juf.readline()
+    data = juf.readline()
 
 julie = data.strip().split(',')
 
 with open('mikey.txt') as mif:
-	data = mif.readline()
+    data = mif.readline()
 
 mikey = data.strip().split(',')
 
 with open('sarah.txt') as saf:
-	data = saf.readline()
+    data = saf.readline()
 
 sarah = data.strip().split(',')
 ```
@@ -56,14 +56,14 @@ We can't quite sort the original data, since the times don't use a consistent
 format.
 ```
 def sanitize(time_string):
-	if '-' in time_string:
-		splitter = '-'
-	elif ':' in time_string:
-		splitter = ':'
-	else:
-		return(time_string)
-	(mins, secs) = time_string.split(splitter)
-	return(mins + '.' + secs)
+    if '-' in time_string:
+        splitter = '-'
+    elif ':' in time_string:
+        splitter = ':'
+    else:
+        return(time_string)
+    (mins, secs) = time_string.split(splitter)
+    return(mins + '.' + secs)
 ```
 Now let's sanitize the data to make it consistent.
 ```
@@ -73,16 +73,16 @@ clean_mikey = []
 clean_sarah = []
 
 for each_time in james:
-	clean_james.append(sanitize(each_time))
+    clean_james.append(sanitize(each_time))
 
 for each_time in julie:
-	clean_julie.append(sanitize(each_time))
+    clean_julie.append(sanitize(each_time))
 
 for each_time in mikey:
-	clean_mikey.append(sanitize(each_time))
-	
+    clean_mikey.append(sanitize(each_time))
+    
 for each_time in sarah:
-	clean_sarah.append(sanitize(each_time))
+    clean_sarah.append(sanitize(each_time))
 ```
 Next, let's display the sorted times.
 ```
@@ -102,7 +102,7 @@ technique called _list comprehension_.
 clean_mikey = []
 
 for each_time in mikey:
-	clean_mikey.append(sanitize(each_time))
+    clean_mikey.append(sanitize(each_time))
 ```
 is equivalent to...
 ```
@@ -122,8 +122,8 @@ clean_james = sorted([sanitize(t) for t in james])
 unique_james = []
 
 for each_time in clean_james:
-	if each_time not in unique_james:
-		unique_james.append(each_time)
+    if each_time not in unique_james:
+        unique_james.append(each_time)
 ```
 ```
 print(unique_james[0:3])
@@ -140,13 +140,13 @@ So far, we still have a ton of code duplication for each of the data sets. We
 need a function to clean this up.
 ```
 def get_coach_data(filename):
-	try:
-		with open(filename) as f:
-			data = f.readline()
-		return(data.strip().split(','))
-	except IOError as ioerr:
-		print('File error: ' + str(ioerr))
-		return(None)
+    try:
+        with open(filename) as f:
+            data = f.readline()
+        return(data.strip().split(','))
+    except IOError as ioerr:
+        print('File error: ' + str(ioerr))
+        return(None)
 ```
 ```
 >>> sarah = get_coach_data('sarah.txt')
