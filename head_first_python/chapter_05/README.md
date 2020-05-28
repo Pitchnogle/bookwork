@@ -108,7 +108,7 @@ is equivalent to...
 ```
 clean_mikey = [sanitize(each_time) for each_time in mikey]
 ```
-We can then apply the sorting and printing simpler
+We can then apply the sorting and printing in one line.
 ```
 >>> james
 ['2-34', '3:21', '2.34', '2.45', '3.01', '2:01', '2:01', '3:10', '2-22']
@@ -152,4 +152,9 @@ def get_coach_data(filename):
 >>> sarah = get_coach_data('sarah.txt')
 >>> print(sorted(set([sanitize(t) for t in sarah]))[0:3])
 ['2.18', '2.25', '2.39']
+```
+Try to open a non-existent file.
+```
+>>> chris = get_coach_data('chris.txt')
+File error: [Errno 2] No such file or directory: 'chris.txt'
 ```
