@@ -18,10 +18,13 @@ try:
 except IOError:
 	print('The datafile is missing!')
 ```
+
+```
 >>> print(man)
 ['Is this the right room for an argument?', "No you haven't!", 'When?', "No you didn't!", "You didn't!", 'You did not!', 'Ah! (taking out his 
 wallet and paying) Just the five minutes.', 'You most certainly did not!', "Oh no you didn't!", "Oh no you didn't!", "Oh look, this isn't an argument!", "No it isn't!", "It's just contradiction!", 'It IS!', 'You just contradicted me!', 'You DID!', 'You did just then!', '(exasperated) Oh, this is futile!!', 'Yes it is!']
 ```
+
 ```
 >>> print(other)
 ["I've told you once.", 'Yes I have.', 'Just now.', 'Yes I did!', "I'm telling you, I did!", "Oh I'm sorry, is this a five minute argument, or the full half hour?", 'Just the five minutes. Thank you.', 'Anyway, I did.', "Now let's get one thing quite clear: I most definitely told you!", 'Oh yes I did!', 'Oh yes I did!', 'Yes it is!', "No it isn't!", 'It is NOT!', "No I didn't!", 'No no no!', 'Nonsense!', "No it isn't!"]   
@@ -140,6 +143,7 @@ except IOError as err:
 except pickle.PickleError as perr:
 	print('Pickling error: ' + str(perr))
 ```
+
 ```
 import pickle
 
