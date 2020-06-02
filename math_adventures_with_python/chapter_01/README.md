@@ -2,13 +2,11 @@
 
 This chapter uses turtle graphics like in the `logo` programming language.
 
-## Exercise 1-1 -- Square Dance
+## Exercise 1-1: Square Dance
 ```py
 from turtle import *
 
 shape('turtle')
-
-# Exercise 1-1 Square Dance
 
 forward(100)
 right(90)
@@ -36,7 +34,7 @@ def square():
 square()
 ```
 
-## Exercise 1-2 -- A Circle of Squares
+## Exercise 1-2: A Circle of Squares
 ```py
 from turtle import *
 
@@ -69,7 +67,7 @@ for i in range(60):
   right(5)
 ```
 
-## Exercise 1-3 -- Tri and Tri Again
+## Exercise 1-3: Tri and Tri Again
 This draws an equalateral triangle
 ```py
 from turtle import *
@@ -85,7 +83,7 @@ def triangle(side_len=100):
 triangle()
 ```
 
-## Exercise 1-4 -- Polygon Functions
+## Exercise 1-4: Polygon Functions
 ```py
 from turtle import *
 
@@ -100,7 +98,7 @@ def polygon(sides=4, side_len=100):
 polygon(5)
 ```
 
-## Exercise 1-5 -- Turtle Spiral
+## Exercise 1-5: Turtle Spiral
 ```py
 from turtle import *
 
@@ -119,14 +117,14 @@ for i in range(60):
   side_len += 5
 ```
 
-## Exercise 1-6 -- A Star is Born
+## Exercise 1-6: A Star is Born
 ```py
 from turtle import *
 
 speed(0)
 
 def star(side_len=100):
-  angle = 180 - 360 / 10
+  angle = 144 # 180 - 360 / (2 * 5)
   for i in range(5):
     forward(side_len)
     right(angle)
