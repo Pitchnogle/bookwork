@@ -1,35 +1,17 @@
 # Chapter 5
+This chapter's jupyter notebook version does all the duplication with each
+athlete. For brevity, this sections just covers one.
+
 ```
 with open('james.txt') as jaf:
     data = jaf.readline()
 
 james = data.strip().split(',')
-
-with open('julie.txt') as juf:
-    data = juf.readline()
-
-julie = data.strip().split(',')
-
-with open('mikey.txt') as mif:
-    data = mif.readline()
-
-mikey = data.strip().split(',')
-
-with open('sarah.txt') as saf:
-    data = saf.readline()
-
-sarah = data.strip().split(',')
 ```
 We can then print out all the time data.
 ```
 >>> print(james)
 ['2-34', '3:21', '2.34', '2.45', '3.01', '2:01', '2:01', '3:10', '2-22']
->>> print(julie)
-['2.59', '2.11', '2:11', '2:23', '3-10', '2-23', '3:10', '3.21', '3-21']
->>> print(mikey)
-['2:22', '3.01', '3:01', '3.02', '3:02', '3.02', '3:22', '2.49', '2:38']
->>> print(sarah)
-['2:58', '2:58', '2:39', '2-25', '2-55', '2:54', '2.18', '2:55', '2:55']
 ```
 ## Sorting in python
 The `sort()` function performs __in-place__ sorting.
@@ -68,45 +50,27 @@ def sanitize(time_string):
 Now let's sanitize the data to make it consistent.
 ```
 clean_james = []
-clean_julie = []
-clean_mikey = []
-clean_sarah = []
 
 for each_time in james:
     clean_james.append(sanitize(each_time))
-
-for each_time in julie:
-    clean_julie.append(sanitize(each_time))
-
-for each_time in mikey:
-    clean_mikey.append(sanitize(each_time))
-    
-for each_time in sarah:
-    clean_sarah.append(sanitize(each_time))
 ```
 Next, let's display the sorted times.
 ```
 >>> print(sorted(clean_james))
 ['2.01', '2.01', '2.22', '2.34', '2.34', '2.45', '3.01', '3.10', '3.21']
->>> print(sorted(clean_julie))
-['2.11', '2.11', '2.23', '2.23', '2.59', '3.10', '3.10', '3.21', '3.21']
->>> print(sorted(clean_mikey))
-['2.22', '2.38', '2.49', '3.01', '3.01', '3.02', '3.02', '3.02', '3.22']
->>> print(sorted(clean_sarah))
-['2.18', '2.25', '2.39', '2.54', '2.55', '2.55', '2.55', '2.58', '2.58']
 ```
 ## List Comprehension
 The code above has a lot of duplication. One way to help in python is to use a
 technique called _list comprehension_.
 ```
-clean_mikey = []
+clean_james = []
 
-for each_time in mikey:
-    clean_mikey.append(sanitize(each_time))
+for each_time in james:
+    clean_james.append(sanitize(each_time))
 ```
 is equivalent to...
 ```
-clean_mikey = [sanitize(each_time) for each_time in mikey]
+clean_james = [sanitize(each_time) for each_time in james]
 ```
 We can then apply the sorting and printing in one line.
 ```
