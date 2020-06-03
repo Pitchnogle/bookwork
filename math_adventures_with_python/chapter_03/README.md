@@ -3,26 +3,26 @@
 ## Exercise 3-1: Finding the Factor
 ```py
 def factors(num):
-	'''
-	returns a list of the factors of num
-	'''
-	factor_list = []
-	for i in range(1, num + 1):
-		if num % i == 0:
-			factor_list.append(i)
-	return factor_list
+    '''
+    returns a list of the factors of num
+    '''
+    factor_list = []
+    for i in range(1, num + 1):
+        if num % i == 0:
+            factor_list.append(i)
+    return factor_list
 
 def gcf(a, b):
-	'''
-	returns the greatest common factor between a and b
-	'''
-	a_factors = factors(a)
-	b_factors = factors(b)
-	common = []
-	for f in a_factors:
-		if f in b_factors:
-			common.append(f)
-	return max(common)
+    '''
+    returns the greatest common factor between a and b
+    '''
+    a_factors = factors(a)
+    b_factors = factors(b)
+    common = []
+    for f in a_factors:
+        if f in b_factors:
+            common.append(f)
+    return max(common)
 ```
 ```py
 >>> gcf(150, 138)
@@ -39,20 +39,20 @@ case initial guesses. To get a more accurate approximation, we just iterate
 more in the loop.
 ```py
 def average(a, b):
-  return (a + b) / 2
+    return (a + b) / 2
 
 def square_root(num):
-  low = 1
-  high = num
-  for i in range(50):
-    guess = average(low, high)
-    if guess ** 2 == num:
-      return guess
-    elif guess ** 2 > num:
-      high = guess
-    else:
-      low = guess
-  return guess
+    low = 1
+    high = num
+    for i in range(50):
+        guess = average(low, high)
+        if guess ** 2 == num:
+            return guess
+        elif guess ** 2 > num:
+            high = guess
+        else:
+            low = guess
+    return guess
 
 print(square_root(200))
 print(square_root(1000))
