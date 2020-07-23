@@ -19,6 +19,7 @@ This repository is a code archive for various computer programming books
 - [Learn Python3 the Hard Way](learn_python3_hard_way)
 - [Learning C# by Developing Games with Unity 5.x](learning_csharp_by_games_unity)
 - [Learning Processing](learning_processing)
+- [Making Games with Python & Pygame](making_games_with_python_pygame)
 - [Math Adventures with Python](math_adventures_with_python)
 - [The Nature of Code](nature_of_code)
 - [Obfuscated C and Other Mysteries](obfuscated_c)
