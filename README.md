@@ -4,6 +4,7 @@ This repository is a code archive for various computer programming books
 
 ## Content
 - [Beginning Linux Programming](linux_programming)
+- [Beginning C++ Through Game Programming](beginning_c++_though_game_programming)
 - [C Interfaces and Implementations](c_interfaces_and_implementations)
 - [C# 3.0 Design Patterns](csharp_design_patterns)
 - [The C# Player's Guide](csharp_players_guide)
@@ -25,4 +26,3 @@ This repository is a code archive for various computer programming books
 - [Obfuscated C and Other Mysteries](obfuscated_c)
 - [The Practice of Programming](practice_of_programming)
 - [Unity Game Development in 24 Hours](unity_game_development_24hours)
-  
