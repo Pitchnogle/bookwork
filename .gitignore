@@ -8,6 +8,8 @@ csharp_players_guide/part_1/hello/hello/bin/Debug
 csharp_players_guide/part_1/hello/.vs/hello/v15
 
 # Beginning C++ Through Game Programming
+beginning_c++_though_game_programming/counter/.vs
+beginning_c++_though_game_programming/counter/out
 beginning_c++_though_game_programming/designers_network/.vs
 beginning_c++_though_game_programming/designers_network/out
 beginning_c++_though_game_programming/die_roller/.vs
@@ -26,6 +28,8 @@ beginning_c++_though_game_programming/game_stats3/.vs
 beginning_c++_though_game_programming/game_stats3/out
 beginning_c++_though_game_programming/guess_my_number/.vs
 beginning_c++_though_game_programming/guess_my_number/out
+beginning_c++_though_game_programming/heros_inventory/.vs
+beginning_c++_though_game_programming/heros_inventory/out
 beginning_c++_though_game_programming/lost_fortune/.vs
 beginning_c++_though_game_programming/lost_fortune/out
 beginning_c++_though_game_programming/menu_chooser/.vs
@@ -40,3 +44,9 @@ beginning_c++_though_game_programming/score_rater2/.vs
 beginning_c++_though_game_programming/score_rater2/out
 beginning_c++_though_game_programming/score_rater3/.vs
 beginning_c++_though_game_programming/score_rater3/out
+beginning_c++_though_game_programming/string_tester/.vs
+beginning_c++_though_game_programming/string_tester/out
+beginning_c++_though_game_programming/tic-tac-toe_board/.vs
+beginning_c++_though_game_programming/tic-tac-toe_board/out
+beginning_c++_though_game_programming/word_jumble/.vs
+beginning_c++_though_game_programming/word_jumble/out
