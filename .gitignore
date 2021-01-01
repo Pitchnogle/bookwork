@@ -42,6 +42,10 @@ beginning_c++_though_game_programming/heros_inventory3/.vs
 beginning_c++_though_game_programming/heros_inventory3/out
 beginning_c++_though_game_programming/high_scores/.vs
 beginning_c++_though_game_programming/high_scores/out
+beginning_c++_though_game_programming/inventory_displayer/.vs
+beginning_c++_though_game_programming/inventory_displayer/out
+beginning_c++_though_game_programming/inventory_referencer/.vs
+beginning_c++_though_game_programming/inventory_referencer/out
 beginning_c++_though_game_programming/lost_fortune/.vs
 beginning_c++_though_game_programming/lost_fortune/out
 beginning_c++_though_game_programming/mad_lib/.vs
@@ -52,6 +56,8 @@ beginning_c++_though_game_programming/play_again/.vs
 beginning_c++_though_game_programming/play_again/out
 beginning_c++_though_game_programming/play_again2/.vs
 beginning_c++_though_game_programming/play_again2/out
+beginning_c++_though_game_programming/referencing/.vs
+beginning_c++_though_game_programming/referencing/out
 beginning_c++_though_game_programming/score_rater/.vs
 beginning_c++_though_game_programming/score_rater/out
 beginning_c++_though_game_programming/score_rater2/.vs
@@ -60,8 +66,12 @@ beginning_c++_though_game_programming/score_rater3/.vs
 beginning_c++_though_game_programming/score_rater3/out
 beginning_c++_though_game_programming/string_tester/.vs
 beginning_c++_though_game_programming/string_tester/out
+beginning_c++_though_game_programming/swap/.vs
+beginning_c++_though_game_programming/swap/out
 beginning_c++_though_game_programming/taking_damage/.vs
 beginning_c++_though_game_programming/taking_damage/out
+beginning_c++_though_game_programming/tic-tac-toe/.vs
+beginning_c++_though_game_programming/tic-tac-toe/out
 beginning_c++_though_game_programming/tic-tac-toe_board/.vs
 beginning_c++_though_game_programming/tic-tac-toe_board/out
 beginning_c++_though_game_programming/word_jumble/.vs
