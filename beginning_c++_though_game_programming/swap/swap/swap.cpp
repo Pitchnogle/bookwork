@@ -1,0 +1,44 @@
+﻿// Chapter 6 -- Swap
+// Demonstrates passing references to alter argument variables
+
+#include <iostream>
+using namespace std;
+
+void bad_swap(int x, int y);
+void good_swap(int& x, int& y);
+
+int main()
+{
+	int my_score = 150;
+	int ur_score = 1000;
+
+	cout << "Orginal values\n";
+	cout << "my_score: " << my_score << endl;
+	cout << "ur_score: " << ur_score << endl;
+
+	cout << "Calling bad_swap()\n";
+	bad_swap(my_score, ur_score);
+	cout << "my_score: " << my_score << endl;
+	cout << "ur_score: " << ur_score << endl;
+
+	cout << "Calling good_swap()\n";
+	good_swap(my_score, ur_score);
+	cout << "my_score: " << my_score << endl;
+	cout << "ur_score: " << ur_score << endl;
+
+	return 0;
+}
+
+void bad_swap(int x, int y)
+{
+	int tmp = x;
+	x = y;
+	y = tmp;
+}
+
+void good_swap(int& x, int& y)
+{
+	int tmp = x;
+	x = y;
+	y = tmp;
+}
