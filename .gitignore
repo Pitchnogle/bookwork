@@ -14,6 +14,8 @@ beginning_c++_though_game_programming/counter/.vs
 beginning_c++_though_game_programming/counter/out
 beginning_c++_though_game_programming/critter_caretaker/.vs
 beginning_c++_though_game_programming/critter_caretaker/out
+beginning_c++_though_game_programming/critter_farm/.vs
+beginning_c++_though_game_programming/critter_farm/out
 beginning_c++_though_game_programming/designers_network/.vs
 beginning_c++_though_game_programming/designers_network/out
 beginning_c++_though_game_programming/die_roller/.vs
@@ -22,6 +24,10 @@ beginning_c++_though_game_programming/expensive_calculator/.vs
 beginning_c++_though_game_programming/expensive_calculator/out
 beginning_c++_though_game_programming/finicky_counter/.vs
 beginning_c++_though_game_programming/finicky_counter/out
+beginning_c++_though_game_programming/friend_critter/.vs
+beginning_c++_though_game_programming/friend_critter/out
+beginning_c++_though_game_programming/game_lobby/.vs
+beginning_c++_though_game_programming/game_lobby/out
 beginning_c++_though_game_programming/game_over/.vs
 beginning_c++_though_game_programming/game_over/out
 beginning_c++_though_game_programming/game_stats/.vs
@@ -38,6 +44,10 @@ beginning_c++_though_game_programming/guess_my_number/.vs
 beginning_c++_though_game_programming/guess_my_number/out
 beginning_c++_though_game_programming/hangman/.vs
 beginning_c++_though_game_programming/hangman/out
+beginning_c++_though_game_programming/heap/.vs
+beginning_c++_though_game_programming/heap/out
+beginning_c++_though_game_programming/heap_data_member/.vs
+beginning_c++_though_game_programming/heap_data_member/out
 beginning_c++_though_game_programming/heros_inventory/.vs
 beginning_c++_though_game_programming/heros_inventory/out
 beginning_c++_though_game_programming/heros_inventory2/.vs
