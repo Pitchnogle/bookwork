@@ -8,6 +8,10 @@ csharp_players_guide/part_1/hello/hello/bin/Debug
 csharp_players_guide/part_1/hello/.vs/hello/v15
 
 # Beginning C++ Through Game Programming
+beginning_c++_though_game_programming/abstract_creature/.vs
+beginning_c++_though_game_programming/abstract_creature/out
+beginning_c++_though_game_programming/blackjack/.vs
+beginning_c++_though_game_programming/blackjack/out
 beginning_c++_though_game_programming/constructor_critter/.vs
 beginning_c++_though_game_programming/constructor_critter/out
 beginning_c++_though_game_programming/counter/.vs
@@ -68,12 +72,16 @@ beginning_c++_though_game_programming/mad_lib/.vs
 beginning_c++_though_game_programming/mad_lib/out
 beginning_c++_though_game_programming/menu_chooser/.vs
 beginning_c++_though_game_programming/menu_chooser/out
+beginning_c++_though_game_programming/overriding_boss/.vs
+beginning_c++_though_game_programming/overriding_boss/out
 beginning_c++_though_game_programming/play_again/.vs
 beginning_c++_though_game_programming/play_again/out
 beginning_c++_though_game_programming/play_again2/.vs
 beginning_c++_though_game_programming/play_again2/out
 beginning_c++_though_game_programming/pointing/.vs
 beginning_c++_though_game_programming/pointing/out
+beginning_c++_though_game_programming/polymorphic_bad_guy/.vs
+beginning_c++_though_game_programming/polymorphic_bad_guy/out
 beginning_c++_though_game_programming/private_critter/.vs
 beginning_c++_though_game_programming/private_critter/out
 beginning_c++_though_game_programming/referencing/.vs
@@ -84,6 +92,10 @@ beginning_c++_though_game_programming/score_rater2/.vs
 beginning_c++_though_game_programming/score_rater2/out
 beginning_c++_though_game_programming/score_rater3/.vs
 beginning_c++_though_game_programming/score_rater3/out
+beginning_c++_though_game_programming/simple_boss/.vs
+beginning_c++_though_game_programming/simple_boss/out
+beginning_c++_though_game_programming/simple_boss2/.vs
+beginning_c++_though_game_programming/simple_boss2/out
 beginning_c++_though_game_programming/simple_critter/.vs
 beginning_c++_though_game_programming/simple_critter/out
 beginning_c++_though_game_programming/static_critter/.vs
