@@ -3,6 +3,8 @@
 This folder contains content related to the book [**Learn Python3 the Hard Way**](https://learnpythonthehardway.org/).
 
 ## Exercises
+|part 1|part 2|
+|:-----|:-----|
 |[Exercise 1](part_1/ex01.md)|[Exercise 13](part_2/ex14.md)|
 |[Exercise 2](part_1/ex02.md)||
 |[Exercise 3](part_1/ex03.md)||
