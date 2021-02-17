@@ -3,18 +3,18 @@
 This folder contains content related to the book [**Learn Python3 the Hard Way**](https://learnpythonthehardway.org/).
 
 ## Exercises
-|part 1|part 2|
-|:-----|:-----|
-|[Exercise 1](part_1/ex01.md)|[Exercise 13](part_2/ex14.md)|
-|[Exercise 2](part_1/ex02.md)||
-|[Exercise 3](part_1/ex03.md)||
-|[Exercise 4](part_1/ex04.md)||
-|[Exercise 5](part_1/ex05.md)||
-|[Exercise 6](part_1/ex06.md)||
-|[Exercise 7](part_1/ex07.md)||
-|[Exercise 8](part_1/ex08.md)||
-|[Exercise 9](part_1/ex09.md)||
-|[Exercise 10](part_1/ex10.md)||
-|[Exercise 11](part_1/ex11.md)||
-|[Exercise 12](part_1/ex12.md)||
-|[Exercise 13](part_1/ex13.md)||
+|part 1|part 2|part 3|part 4|
+|:-----|:-----|:-----|:-----|
+|[Exercise 1](part_1/ex01.md)|[Exercise 14](part_2/ex14.md)|||
+|[Exercise 2](part_1/ex02.md)||||
+|[Exercise 3](part_1/ex03.md)||||
+|[Exercise 4](part_1/ex04.md)||||
+|[Exercise 5](part_1/ex05.md)||||
+|[Exercise 6](part_1/ex06.md)||||
+|[Exercise 7](part_1/ex07.md)||||
+|[Exercise 8](part_1/ex08.md)||||
+|[Exercise 9](part_1/ex09.md)||||
+|[Exercise 10](part_1/ex10.md)||||
+|[Exercise 11](part_1/ex11.md)||||
+|[Exercise 12](part_1/ex12.md)||||
+|[Exercise 13](part_1/ex13.md)||||
