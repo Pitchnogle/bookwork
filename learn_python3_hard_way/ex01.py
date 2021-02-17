@@ -1,0 +1,6 @@
+print("Hello World!")
+print('Hello again?')
+print('This line has embedded "quotes"')
+print("This line also has embedded \"quotes\"")
+#print('What does an "octothorpe" do?')
+print("It's a comment!")
