@@ -10,7 +10,7 @@ This folder contains content related to the book [**Learn Python3 the Hard Way**
 |[Exercise 3](part_1/ex03.md)|[Exercise 16](part_2/ex16.md)|||
 |[Exercise 4](part_1/ex04.md)|[Exercise 17](part_2/ex17.md)|||
 |[Exercise 5](part_1/ex05.md)|[Exercise 18](part_2/ex18.md)|||
-|[Exercise 6](part_1/ex06.md)||||
+|[Exercise 6](part_1/ex06.md)|[Exercise 19](part_2/ex19.md)|||
 |[Exercise 7](part_1/ex07.md)||||
 |[Exercise 8](part_1/ex08.md)||||
 |[Exercise 9](part_1/ex09.md)||||
