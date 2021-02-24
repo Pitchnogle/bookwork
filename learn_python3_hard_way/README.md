@@ -15,6 +15,6 @@ This folder contains content related to the book [**Learn Python3 the Hard Way**
 |[Exercise 8](part_1/ex08.md) |[Exercise 21](part_2/ex21.md)|||
 |[Exercise 9](part_1/ex09.md) ||||
 |[Exercise 10](part_1/ex10.md)|[Exercise 23](part_2/ex23.md)|||
-|[Exercise 11](part_1/ex11.md)||||
+|[Exercise 11](part_1/ex11.md)|[Exercise 24](part_2/ex24.md)|||
 |[Exercise 12](part_1/ex12.md)||||
 |[Exercise 13](part_1/ex13.md)||||
