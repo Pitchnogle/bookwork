@@ -5,8 +5,8 @@ This folder contains content related to the book [**Learn Python3 the Hard Way**
 ## Exercises
 |Exercise 1-13                |Exercise 14-26               |Exercise 27-39               |Exercise 40-52|
 |:----------------------------|:----------------------------|:----------------------------|:-------------|
-|[Exercise 1](part_1/ex01.md) |[Exercise 14](part_2/ex14.md)|[Exercise 27](part_2/ex27.md)||
-|[Exercise 2](part_1/ex02.md) |[Exercise 15](part_2/ex15.md)|[Exercise 28](part_2/ex28.md)||
+|[Exercise 1](part_1/ex01.md) |[Exercise 14](part_2/ex14.md)|[Exercise 27](part_3/ex27.md)||
+|[Exercise 2](part_1/ex02.md) |[Exercise 15](part_2/ex15.md)|[Exercise 28](part_3/ex28.md)||
 |[Exercise 3](part_1/ex03.md) |[Exercise 16](part_2/ex16.md)|||
 |[Exercise 4](part_1/ex04.md) |[Exercise 17](part_2/ex17.md)|||
 |[Exercise 5](part_1/ex05.md) |[Exercise 18](part_2/ex18.md)|||
