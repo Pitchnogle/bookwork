@@ -8,7 +8,7 @@ for number in the_count:
 
 # Same as above
 for fruit in fruits:
-    print(f"A fruit of type {fruit}")
+    print(f"A fruit of type: {fruit}")
 
 # Also, we go go through mixed lists
 for i in change:
